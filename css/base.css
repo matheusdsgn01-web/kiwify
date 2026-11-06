@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Lenis (scroll suave — js/smooth-scroll.js) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: calc(var(--container) + 2 * 16px);
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
+/* ---------- Botão (componente "Button" do Figma) ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  height: 44px;
+  padding-inline: 20px;
+  border: 1px solid var(--color-paper);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-ui-size);
+  font-weight: var(--text-ui-weight);
+  line-height: var(--text-ui-leading);
+  white-space: nowrap;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Seta (desenhada em linha, herda a cor do texto do botão) */
+.btn__arrow {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.btn--light {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.btn--outline-light {
+  background: transparent;
+  color: var(--color-paper);
+}
+
+/* ---------- Hover / foco: levanta, seta sobe na diagonal, cor com contraste ----------
+   Padrão (fundos escuros e verdes): o botão claro vira verde-limão; o contornado
+   enche de branco. Sobre fundo claro (menu no tema claro) há regras em css/nav.css. */
+.btn:hover,
+.btn:focus-visible {
+  transform: translateY(-2px);
+}
+
+.btn:hover .btn__arrow,
+.btn:focus-visible .btn__arrow {
+  transform: translate(2px, -2px);
+}
+
+.btn--light:hover,
+.btn--light:focus-visible {
+  background: var(--color-lime);
+  border-color: var(--color-lime);
+  color: var(--color-ink);
+}
+
+.btn--outline-light:hover,
+.btn--outline-light:focus-visible {
+  background: var(--color-paper);
+  border-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.btn:active {
+  transform: translateY(0);
+  transition-duration: 0.1s;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-lime);
+  outline-offset: 3px;
+}
+/* Obs.: o deslocamento de 2px no hover é mínimo e disparado pelo próprio usuário,
+   por isso vale também com "reduzir movimento" ativo no sistema. */

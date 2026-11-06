@@ -1,0 +1,723 @@
+/* ---------- Seção 5: Tudo que acontece depois da venda (Figma 2:607) ---------- */
+.posvenda {
+  --color-green-deep: #06311e;
+  background: var(--color-surface);
+  min-height: 1462px;
+  padding-block: 152.36px 120px;
+}
+
+.mono {
+  font-family: "Geist Mono", ui-monospace, monospace;
+}
+
+.eyebrow {
+  font-size: 9.94px;
+  line-height: 1.3;
+  letter-spacing: 0.7952px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.eyebrow--sm {
+  font-size: 8.133px;
+  letter-spacing: 0.6506px;
+}
+
+/* Intro */
+.posvenda__intro {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.posvenda__title {
+  color: var(--color-ink);
+  font-size: 65.06px;
+  font-weight: 200;
+  line-height: 0.96;
+  letter-spacing: -2.6024px;
+}
+
+.posvenda__title strong {
+  font-weight: 500;
+}
+
+.posvenda__lead {
+  width: 343.374px;
+  flex-shrink: 0;
+  color: var(--color-mute);
+  font-size: 14.458px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+/* Bento */
+.bento {
+  margin-top: 51.3px;
+  display: flex;
+  flex-direction: column;
+  gap: 14.458px;
+}
+
+.bento__linha {
+  display: flex;
+  align-items: stretch;
+  gap: 14.458px;
+}
+
+.bento-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18.072px;
+  padding: 32.53px 36.145px 36.145px;
+  overflow: hidden;
+  background: var(--color-white);
+  border: 0.904px solid var(--color-line);
+  border-radius: 18.072px;
+}
+
+.bento-card--suporte {
+  width: 487.952px;
+  flex-shrink: 0;
+}
+
+.bento-card--saques {
+  flex: 1 0 0;
+  min-width: 0;
+}
+
+.bento-card__top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--color-mute);
+}
+
+.bento-card__h {
+  color: var(--color-ink);
+  font-size: 36.145px;
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -1.0843px;
+}
+
+.bento-card__p {
+  color: var(--color-mute);
+  font-size: 14.458px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+/* Suporte: status online */
+.status-online {
+  display: flex;
+  align-items: center;
+  gap: 7.229px;
+  padding: 5.422px 10.843px 5.422px 9.036px;
+  border: 0.904px solid var(--color-green);
+  border-radius: 999px;
+  color: var(--color-green);
+}
+
+.status-online__dot {
+  position: relative;
+  width: 12.651px;
+  height: 12.651px;
+  flex-shrink: 0;
+}
+
+.status-online__dot img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ---------- Pulso "ao vivo" (usado no Online agora e nas bolinhas da trilha) ----------
+   Um anel que cresce e some + o miolo "respirando". Os loops só rodam com
+   html.motion-ok (sistema sem "reduzir movimento", ou ?anim na URL). */
+.pulso {
+  --pulso-tam: 25.3px; /* diâmetro do anel do desenho */
+  --pulso-miolo: 9.94px; /* diâmetro da bolinha central do desenho */
+  position: absolute;
+  width: var(--pulso-tam);
+  height: var(--pulso-tam);
+  margin: calc(var(--pulso-tam) / -2) 0 0 calc(var(--pulso-tam) / -2);
+  pointer-events: none;
+}
+
+.pulso::before,
+.pulso::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+/* anel que se expande */
+.pulso::before {
+  inset: 0;
+  border: 1.2px solid var(--color-green);
+  opacity: 0;
+}
+
+/* miolo */
+.pulso::after {
+  left: 50%;
+  top: 50%;
+  width: var(--pulso-miolo);
+  height: var(--pulso-miolo);
+  margin: calc(var(--pulso-miolo) / -2) 0 0 calc(var(--pulso-miolo) / -2);
+  background: var(--color-green);
+  box-shadow: 0 0 0 0 rgba(11, 122, 69, 0.35);
+}
+
+.motion-ok .pulso::before {
+  animation: pulso-anel 1.8s cubic-bezier(0.2, 0.7, 0.3, 1) infinite;
+}
+
+.motion-ok .pulso::after {
+  animation: pulso-miolo 1.8s ease-in-out infinite;
+}
+
+@keyframes pulso-anel {
+  0% { transform: scale(0.4); opacity: 0.75; }
+  70% { opacity: 0.15; }
+  100% { transform: scale(1.9); opacity: 0; }
+}
+
+@keyframes pulso-miolo {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(11, 122, 69, 0.35); }
+  45% { transform: scale(1.25); box-shadow: 0 0 0 3px rgba(11, 122, 69, 0); }
+}
+
+/* No "Online agora" o pulso fica sobre o ícone (anel 12.65px, miolo 6.3px) */
+.status-online__dot .pulso {
+  --pulso-tam: 12.651px;
+  --pulso-miolo: 6.33px;
+  left: 50%;
+  top: 50%;
+}
+
+/* Chat: mensagens entram em sequência (js/posvenda.js adiciona .is-playing) */
+.chat {
+  width: 198.795px;
+  display: flex;
+  flex-direction: column;
+  gap: 9.036px;
+}
+
+.chat__linha {
+  display: flex;
+  align-items: flex-end;
+  gap: 7.229px;
+}
+
+.chat__linha--eu {
+  justify-content: flex-end;
+}
+
+.chat__linha--typing {
+  align-items: center;
+}
+
+.chat__bolha {
+  padding: 8.133px 10.843px;
+  font-size: 11.747px;
+  line-height: 1.3;
+}
+
+.chat__bolha p {
+  width: 144.578px;
+}
+
+.chat__bolha--eu {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border-radius: 10.843px 10.843px 2.711px 10.843px;
+}
+
+.chat__bolha--lu {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border-radius: 10.843px 10.843px 10.843px 2.711px;
+}
+
+.chat__avatar {
+  width: 23.494px;
+  height: 23.494px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-green);
+  color: var(--color-white);
+}
+
+.chat__gap {
+  width: 23.494px;
+  height: 9.036px;
+  flex-shrink: 0;
+}
+
+.chat__typing {
+  width: 42.47px;
+  height: 22.59px;
+}
+
+.chat__meta {
+  color: var(--color-mute);
+}
+
+.js-anim .chat > * {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.js-anim .chat.is-playing > * {
+  animation: chat-in 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.js-anim .chat.is-playing > :nth-child(2) {
+  animation-delay: 0.9s;
+}
+
+.js-anim .chat.is-playing > :nth-child(3) {
+  animation-delay: 1.7s;
+}
+
+.js-anim .chat.is-playing > :nth-child(4) {
+  animation-delay: 2.1s;
+}
+
+@keyframes chat-in {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* "Digitando…": os 3 pontinhos sobem e descem em onda, sem parar */
+.chat__typing circle {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.motion-ok .chat__typing circle {
+  animation: digitando 1.2s ease-in-out infinite;
+}
+
+.motion-ok .chat__typing circle:nth-of-type(2) {
+  animation-delay: 0.16s;
+}
+
+.motion-ok .chat__typing circle:nth-of-type(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes digitando {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.45; }
+  30% { transform: translateY(-3.2px); opacity: 1; }
+}
+
+/* Agenda 7 dias · 8h–21h */
+.agenda {
+  position: relative;
+  width: 415.663px;
+  max-width: 100%;
+  height: 86.747px;
+  flex-shrink: 0;
+}
+
+.agenda__barras {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 415.663px;
+  height: 63.253px;
+}
+
+.agenda__dia,
+.agenda__hora {
+  position: absolute;
+  color: var(--color-mute);
+}
+
+.agenda__dia {
+  top: 70.48px;
+}
+
+/* Saques: toggle 2/15 dias */
+.toggle {
+  display: flex;
+  padding: 2.711px;
+  border: 0.904px solid var(--color-line);
+  border-radius: 999px;
+}
+
+.toggle button {
+  padding: 7.229px 12.651px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--color-ink);
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.toggle button[aria-pressed="true"] {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.toggle button:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 2px;
+}
+
+/* Linha do tempo D0 → D15 */
+.trilhas {
+  position: relative;
+  width: 625.301px;
+  height: 271.084px;
+  flex-shrink: 0;
+}
+
+.trilhas__svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 625.301px;
+  height: 271.084px;
+}
+
+.trilhas__label,
+.trilhas__dia,
+.trilhas__chip {
+  position: absolute;
+}
+
+.trilhas__label {
+  left: 0;
+  color: var(--color-ink);
+}
+
+.trilhas__dia {
+  top: 256.63px;
+  font-size: 9.036px;
+  letter-spacing: 0.7229px;
+  color: var(--color-mute);
+}
+
+.trilhas__dia--ativo {
+  color: var(--color-green);
+}
+
+.trilhas__chip {
+  left: 175.54px;
+  padding: 4.518px 9.036px;
+  border-radius: 999px;
+  background: var(--color-green);
+  color: var(--color-white);
+  transition: left 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s ease;
+}
+
+/* Estado "Em 15 dias": cartão liberado no D+15 */
+.saques--15 .trilhas__chip--cartao {
+  left: 520px;
+  background: var(--color-ink);
+}
+
+.saques--15 .trilhas__dia--ativo {
+  color: var(--color-mute);
+}
+
+.saques--15 .trilhas__dia--d15 {
+  color: var(--color-green);
+}
+
+/* Pulsos nas bolinhas ativas da trilha (coordenadas do desenho, 1:1).
+   Cartão: pulsa no D+2 no modo "2 dias" e no D+15 no modo "15 dias". */
+.trilhas .pulso {
+  transition: opacity 0.35s ease;
+}
+
+.pulso--cartao-15 {
+  opacity: 0;
+}
+
+.saques--15 .pulso--cartao-2 {
+  opacity: 0;
+}
+
+.saques--15 .pulso--cartao-15 {
+  opacity: 1;
+}
+
+.saques__rodape {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.saques__texto {
+  display: flex;
+  flex-direction: column;
+  gap: 18.072px;
+}
+
+.saques__texto > * {
+  width: 361.446px;
+  max-width: 100%;
+}
+
+.saques__valor {
+  display: flex;
+  align-items: baseline;
+  gap: 7.229px;
+  white-space: nowrap;
+}
+
+.saques__num {
+  color: var(--color-ink);
+  font-size: 135.542px;
+  font-weight: 200;
+  line-height: 0.88;
+  letter-spacing: -8.1325px;
+}
+
+.saques__un {
+  color: var(--color-green);
+  font-size: 32.53px;
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -0.9759px;
+}
+
+/* Card verde: 1 clique */
+.um-clique {
+  position: relative;
+  height: 417px;
+  overflow: hidden;
+  border-radius: 18.072px;
+}
+
+.um-clique__card {
+  position: absolute;
+  left: 0;
+  top: 0.42px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 43.373px;
+  background: linear-gradient(to bottom, #0e7749, #09482c);
+  border: 0.904px solid var(--color-green-deep);
+  border-radius: 18.072px;
+}
+
+.um-clique__texto {
+  width: 343.374px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18.072px;
+  color: var(--color-paper);
+}
+
+.um-clique__h {
+  font-size: 36.145px;
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -1.0843px;
+}
+
+.um-clique__p {
+  width: 325.301px;
+  max-width: 100%;
+  font-size: 14.458px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+.um-clique__stat {
+  padding-top: 10.843px;
+  display: flex;
+  flex-direction: column;
+  gap: 3.614px;
+  white-space: nowrap;
+}
+
+.um-clique__valor {
+  display: flex;
+  align-items: baseline;
+  gap: 5.422px;
+}
+
+.um-clique__ate {
+  font-size: 19.88px;
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -0.5964px;
+}
+
+.um-clique__pct {
+  color: #65ffbb;
+  font-size: 86.747px;
+  font-weight: 200;
+  line-height: 0.88;
+  letter-spacing: -5.2048px;
+}
+
+.um-clique__moedas {
+  position: absolute;
+  left: 366px;
+  top: -175.54px;
+  width: 756px;
+  height: 1012px;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* ---------- Moedas em carrossel (js/moedas.js) ----------
+   O palco ocupa exatamente a caixa da imagem estática; com ele ativo a imagem some.
+   Cada moeda é uma imagem em alta (recortada do original 1792×2400), desenhada no
+   tamanho que tem na frente do anel e só reduzida — por isso fica nítida o tempo todo. */
+.um-clique.has-moedas-3d img.um-clique__moedas {
+  visibility: hidden;
+}
+
+.um-clique__moedas--3d {
+  overflow: visible;
+}
+
+.moeda {
+  position: absolute;
+  left: 0;
+  top: 0;
+  max-width: none;
+  transform-origin: 50% 50%;
+  user-select: none;
+  image-rendering: auto;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1100px) {
+  .posvenda {
+    min-height: 0;
+    padding-block: 96px;
+  }
+
+  .posvenda__intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .posvenda__title {
+    font-size: clamp(38px, 6vw, 65.06px);
+    letter-spacing: -0.04em;
+  }
+
+  .posvenda__title br {
+    display: none;
+  }
+
+  .bento {
+    margin-top: 40px;
+  }
+
+  .bento__linha {
+    flex-direction: column;
+  }
+
+  .bento-card--suporte {
+    width: 100%;
+  }
+
+  .bento-card--saques {
+    flex: none;
+  }
+
+  .trilhas {
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .um-clique {
+    height: auto;
+  }
+
+  .um-clique__card {
+    position: relative;
+    top: 0;
+    min-height: 417px;
+  }
+
+  .um-clique__moedas {
+    left: auto;
+    right: -180px;
+    opacity: 0.9;
+  }
+}
+
+@media (max-width: 640px) {
+  .posvenda {
+    padding-block: 72px;
+  }
+
+  .posvenda__lead {
+    width: auto;
+  }
+
+  .bento-card {
+    padding: 24px 20px;
+  }
+
+  .bento-card__h {
+    font-size: 28px;
+  }
+
+  .bento-card__p,
+  .saques__texto > * {
+    width: auto;
+  }
+
+  .saques__rodape {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .saques__num {
+    font-size: 96px;
+  }
+
+  .agenda {
+    overflow: hidden;
+  }
+
+  .um-clique__texto {
+    width: 100%;
+  }
+
+  .um-clique__card {
+    padding: 28px 24px;
+    align-items: flex-start;
+    min-height: 0;
+    padding-bottom: 220px;
+  }
+
+  .um-clique__moedas {
+    width: 420px;
+    height: 562px;
+    top: auto;
+    bottom: -240px;
+    right: -90px;
+  }
+}
+/* Loops (pulso, digitando) só rodam com html.motion-ok — ver o <head> do index.html */

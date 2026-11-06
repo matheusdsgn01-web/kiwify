@@ -1,0 +1,136 @@
+/* ---------- Menu principal (Figma 1:1286) ----------
+   Fixo no topo durante a página toda. O fundo desfocado vai de ponta a ponta da tela;
+   o conteúdo continua alinhado em 1199px como no Figma.
+   Tema: escuro (texto claro) por padrão; .nav--light (texto escuro) sobre seções
+   de fundo claro — trocado por js/nav.js conforme a seção que está embaixo.
+*/
+.nav {
+  --nav-fg: var(--color-paper);
+  --nav-bg: rgba(6, 10, 8, 0.18);
+  --nav-line: rgba(244, 244, 239, 0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: 72px;
+  color: var(--nav-fg);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-line);
+  backdrop-filter: blur(32.25px) saturate(140%);
+  -webkit-backdrop-filter: blur(32.25px) saturate(140%);
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+.nav__inner {
+  width: 100%;
+  max-width: 1199px;
+  height: 100%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.nav__logo img {
+  width: 120px;
+  height: 31.5235px;
+  transition: filter 0.35s ease;
+}
+
+.nav__links {
+  display: flex;
+  gap: 28px;
+  font-size: var(--text-ui-size);
+  line-height: var(--text-ui-leading);
+  white-space: nowrap;
+}
+
+.nav__links a {
+  transition: opacity 0.2s ease;
+}
+
+.nav__links a:hover {
+  opacity: 0.7;
+}
+
+.nav__ctas {
+  display: flex;
+  gap: 10px;
+}
+
+.nav__ctas .btn {
+  width: 160px;
+}
+
+/* "Começar a vender" ganhou a seta → largura se ajusta ao conteúdo */
+.nav__ctas .btn--light {
+  width: auto;
+  min-width: 160px;
+}
+
+/* ---------- Tema claro (sobre seções de fundo claro) ---------- */
+.nav--light {
+  --nav-fg: var(--color-ink);
+  --nav-bg: rgba(238, 238, 238, 0.62);
+  --nav-line: rgba(14, 16, 13, 0.08);
+}
+
+/* logo branco → tinta */
+.nav--light .nav__logo img {
+  filter: brightness(0) saturate(100%);
+}
+
+.nav--light .btn--outline-light {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.nav--light .btn--light {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* Hover sobre fundo claro: contraste com o cinza — verde Kiwify / tinta cheia */
+.nav--light .btn--light:hover,
+.nav--light .btn--light:focus-visible {
+  border-color: var(--color-green);
+  background: var(--color-green);
+  color: var(--color-white);
+}
+
+.nav--light .btn--outline-light:hover,
+.nav--light .btn--outline-light:focus-visible {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.nav--light .btn:focus-visible {
+  outline-color: var(--color-green);
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1240px) {
+  .nav__inner {
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav__links {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav__ctas .btn {
+    width: auto;
+  }
+
+  .nav__ctas .btn--outline-light {
+    display: none;
+  }
+}

@@ -1,0 +1,271 @@
+/* ---------- Seção 11: Sua operação no bolso (Figma 3:1141) ---------- */
+.app {
+  position: relative;
+  min-height: 902px;
+  overflow: hidden;
+  padding-block: 137px 34px;
+  background: var(--color-surface);
+}
+
+.app .container {
+  position: relative;
+  padding-left: 17px; /* conteúdo começa em x=121 no Figma */
+}
+
+.app__texto {
+  position: relative;
+  z-index: 1;
+  width: 383px;
+}
+
+.app__title {
+  width: 600px;
+  color: var(--color-ink);
+  font-size: 88px;
+  font-weight: 200;
+  line-height: 0.96;
+  letter-spacing: -3.52px;
+}
+
+.app__title strong {
+  font-weight: 500;
+}
+
+/* Selos das lojas */
+.app__lojas {
+  margin-top: 43px;
+  display: flex;
+  align-items: flex-start;
+  gap: 25.37px;
+}
+
+.app__loja {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s ease;
+}
+
+.app__loja:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+.app__loja:focus-visible {
+  outline: 2px solid var(--color-green);
+  outline-offset: 3px;
+}
+
+.app__loja--google {
+  width: 217px;
+  height: 64.595px;
+}
+
+.app__loja--google img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app__loja--apple {
+  width: 219.186px;
+  height: 65px;
+}
+
+.app__loja--apple img {
+  position: absolute;
+  left: -4.4%;
+  top: -6.98%;
+  width: 108.71%;
+  height: 112.79%;
+  max-width: none;
+}
+
+/* Notificações "Venda aprovada!" */
+.app__notifs {
+  margin-top: 49px;
+  display: flex;
+  flex-direction: column;
+  gap: 10.94px;
+}
+
+.notif {
+  position: relative;
+  width: 383px;
+  max-width: 100%;
+  height: 72.123px;
+  background: var(--color-white);
+  border: 1.244px solid rgba(29, 29, 29, 0.15);
+  border-radius: 17.409px;
+  color: #090909;
+  font-size: 16.935px;
+  line-height: 0.96;
+  letter-spacing: -0.6774px;
+  white-space: nowrap;
+}
+
+.notif__icone {
+  position: absolute;
+  left: 7.456px;
+  top: 7.456px;
+  width: 54.714px;
+  height: 54.714px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13.207px;
+  background: #2eaa6a;
+}
+
+.notif__icone img {
+  width: 29.8px;
+  height: 29.84px;
+}
+
+.notif__titulo,
+.notif__texto,
+.notif__tempo {
+  position: absolute;
+}
+
+.notif__titulo {
+  left: 77.1px;
+  top: 14.93px;
+  font-weight: 600;
+}
+
+.notif__texto {
+  left: 77.1px;
+  top: 38.55px;
+  font-weight: 400;
+}
+
+.notif__tempo {
+  left: 327.05px;
+  top: 16.5px;
+  color: #bfbfbf;
+  font-size: 13.642px;
+  font-weight: 500;
+  letter-spacing: -0.5457px;
+}
+
+/* Entrada em sequência (js/app.js adiciona .is-in quando a seção aparece) */
+.js-anim .notif {
+  opacity: 0;
+  transform: translateY(14px) scale(0.98);
+  transition: opacity 0.5s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.js-anim .app__notifs.is-in .notif {
+  opacity: 1;
+  transform: none;
+}
+
+.js-anim .app__notifs.is-in .notif:nth-child(2) { transition-delay: 0.15s; }
+.js-anim .app__notifs.is-in .notif:nth-child(3) { transition-delay: 0.3s; }
+.js-anim .app__notifs.is-in .notif:nth-child(4) { transition-delay: 0.45s; }
+.js-anim .app__notifs.is-in .notif:nth-child(5) { transition-delay: 0.6s; }
+
+/* Celular */
+.app__celular {
+  position: absolute;
+  left: calc(50% - 720px + 561px);
+  top: -44px;
+  width: 911px;
+  height: 1220px;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+  transform: translate3d(0, var(--parallax, 0px), 0);
+  will-change: transform;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1200px) {
+  .app__celular {
+    left: auto;
+    right: -260px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .app {
+    min-height: 0;
+    padding-block: 96px 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .app .container {
+    order: 1;
+  }
+
+  .app__celular {
+    order: 2;
+  }
+
+  .app .container {
+    padding-left: 16px;
+  }
+
+  .app__texto {
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .app__title {
+    width: auto;
+    font-size: clamp(44px, 8vw, 88px);
+    letter-spacing: -0.04em;
+  }
+
+  .app__celular {
+    position: relative;
+    display: block;
+    left: 50%;
+    right: auto;
+    top: 0;
+    width: 640px;
+    height: 857px;
+    margin: 32px 0 -320px;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 560px) {
+  .app {
+    padding-top: 72px;
+  }
+
+  .app__lojas {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .app__loja--google {
+    width: 150px;
+    height: 44.65px;
+  }
+
+  .app__loja--apple {
+    width: 151.5px;
+    height: 44.93px;
+  }
+
+  .notif {
+    transform-origin: left center;
+  }
+
+  .app__celular {
+    width: 460px;
+    height: 616px;
+    margin-bottom: -220px;
+  }
+}
+
+@media (max-width: 420px) {
+  .app__notifs {
+    zoom: 0.86;
+  }
+}

@@ -1,0 +1,258 @@
+/* ---------- Seção 3: Mais vendas aprovadas / KiwiPay (Figma 1:1363) ---------- */
+.aprovacao {
+  --dial-scale: 1;
+  position: relative;
+  height: 1116px;
+  overflow: hidden;
+  padding-top: 87px;
+  text-align: center;
+  color: var(--color-paper);
+  /* Gradiente recalculado a partir do gradientTransform do Figma */
+  background: linear-gradient(205.64deg, rgb(22, 174, 107) -75.42%, rgb(9, 72, 44) 75.11%);
+}
+
+.aprovacao__title {
+  position: relative;
+  z-index: 1;
+  max-width: calc(841px + 32px);
+  margin-inline: auto;
+  padding-inline: 16px;
+  font-size: 88px;
+  font-weight: 200;
+  line-height: 0.96;
+  letter-spacing: -3.52px;
+}
+
+.aprovacao__title strong {
+  font-weight: 500;
+}
+
+.aprovacao__lead {
+  position: relative;
+  max-width: 508px;
+  margin: 27.6px auto 0;
+  padding-inline: 16px;
+  box-sizing: content-box;
+  font-size: var(--text-lead-size);
+  font-weight: var(--text-lead-weight);
+  line-height: var(--text-lead-leading);
+}
+
+/* Ilustração do dial (1044 × 1044) */
+.dial {
+  position: absolute;
+  top: 352px;
+  left: 50%;
+  width: 1044px;
+  height: 1044px;
+  overflow: hidden;
+  border-radius: 32.968px;
+  transform: translateX(-50%) scale(var(--dial-scale));
+  transform-origin: top center;
+  text-align: left;
+}
+
+.dial__vetor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.dv,
+.dv > span {
+  position: absolute;
+}
+
+.dv img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.dv > img {
+  position: absolute;
+  inset: 0;
+}
+
+/* Centro: +90% */
+.dial__centro {
+  position: absolute;
+  left: 335.87px;
+  top: 398.37px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13.737px;
+  white-space: nowrap;
+}
+
+.dial__eyebrow {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 15.111px;
+  letter-spacing: 1.8133px;
+  text-transform: uppercase;
+}
+
+.dial__valor {
+  display: flex;
+  align-items: baseline;
+  gap: 2.747px;
+}
+
+.dial__plus {
+  color: #65ffbb;
+  font-size: 87.916px;
+  font-weight: 200;
+}
+
+.dial__num {
+  font-size: 241.768px;
+  font-weight: 200;
+  line-height: 0.86;
+  letter-spacing: -14.5061px;
+}
+
+.dial__pct {
+  color: #65ffbb;
+  font-size: 98.905px;
+  font-weight: 300;
+}
+
+/* Chip de transação */
+.chip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 13.737px;
+  padding: 13.737px 21.979px 13.737px 16.484px;
+  overflow: hidden;
+  white-space: nowrap;
+  background: rgba(7, 58, 36, 0.01);
+  border: 1.374px solid rgba(2, 18, 11, 0.1);
+  border-radius: 16.484px;
+  backdrop-filter: blur(3.709px);
+  -webkit-backdrop-filter: blur(3.709px);
+}
+
+.chip > img {
+  width: 30.221px;
+  height: 30.221px;
+  flex-shrink: 0;
+}
+
+.chip__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2.747px;
+}
+
+.chip__card {
+  font-size: 17.858px;
+}
+
+.chip__status {
+  color: var(--color-lime);
+  font-size: 12.363px;
+  letter-spacing: 0.9891px;
+  text-transform: uppercase;
+}
+
+.chip--mastercard {
+  inset: 45.31% 0.94% 48.09% 76.72%;
+}
+
+.chip--cartao {
+  left: 616.78px;
+  top: 145.61px;
+}
+
+.chip--visa {
+  left: 97.53px;
+  top: 627px;
+}
+
+/* ---------- Animações (js/aprovacao.js adiciona .is-floating) ---------- */
+/* Chips de cartão flutuando — cada um com ritmo e direção próprios */
+.aprovacao.is-floating .chip {
+  will-change: transform;
+}
+
+.aprovacao.is-floating .chip--cartao {
+  animation: chip-flutua-a 6.5s ease-in-out infinite;
+}
+
+.aprovacao.is-floating .chip--mastercard {
+  animation: chip-flutua-b 7.8s ease-in-out -2.4s infinite;
+}
+
+.aprovacao.is-floating .chip--visa {
+  animation: chip-flutua-c 7.1s ease-in-out -4.1s infinite;
+}
+
+@keyframes chip-flutua-a {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(9px, -7px) rotate(0.6deg); }
+  50% { transform: translate(14px, 3px) rotate(0deg); }
+  75% { transform: translate(4px, 9px) rotate(-0.6deg); }
+}
+
+@keyframes chip-flutua-b {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  30% { transform: translate(-12px, 6px) rotate(-0.7deg); }
+  60% { transform: translate(-6px, -9px) rotate(0.4deg); }
+  80% { transform: translate(5px, -4px) rotate(0deg); }
+}
+
+@keyframes chip-flutua-c {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  35% { transform: translate(11px, -10px) rotate(0.5deg); }
+  65% { transform: translate(-7px, -4px) rotate(-0.5deg); }
+}
+
+/* Arco e bolinha: posição controlada pelo scroll (sem transição para não "atrasar") */
+.dial__arco path {
+  will-change: stroke-dashoffset;
+}
+
+/* ---------- Responsivo ---------- */
+/* Abaixo de 1100px o dial entra no fluxo e escala; a seção corta
+   o dial na mesma proporção do desktop (764 de 1044px visíveis). */
+@media (max-width: 1100px) {
+  .aprovacao {
+    --dial-scale: 0.8;
+    height: auto;
+  }
+
+  .dial {
+    position: relative;
+    top: 0;
+    margin-top: -16px;
+    margin-bottom: calc(764px * var(--dial-scale) - 1044px);
+  }
+}
+
+@media (max-width: 860px) {
+  .aprovacao {
+    --dial-scale: 0.62;
+    padding-top: 72px;
+  }
+
+  .aprovacao__title {
+    font-size: clamp(40px, 9vw, 72px);
+    letter-spacing: -0.04em;
+  }
+
+  .aprovacao__lead {
+    font-size: 17px;
+  }
+
+  .dial {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 560px) {
+  .aprovacao {
+    --dial-scale: 0.36;
+  }
+}

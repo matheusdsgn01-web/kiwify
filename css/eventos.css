@@ -1,0 +1,108 @@
+/* ---------- Seção 6: Fora da tela, a Kiwify também reúne (Figma 2:610) ---------- */
+.eventos {
+  position: relative;
+  height: 917px;
+  overflow: hidden;
+  padding-top: 74px;
+  text-align: center;
+  color: var(--color-paper);
+  background: #0b5a37;
+  isolation: isolate;
+}
+
+/* Kiwi decorativo espelhado ao fundo (1192.92 × 1192.92) */
+.eventos__kiwi {
+  position: absolute;
+  z-index: -1;
+  top: -363px;
+  left: calc(50% - 720px - 342px);
+  width: 1192.92px;
+  height: 1192.92px;
+  transform: scaleX(-1);
+  pointer-events: none;
+}
+
+/* Multidão (círculos) no rodapé da seção */
+.eventos__multidao {
+  position: absolute;
+  z-index: -1;
+  top: 756.45px;
+  left: calc(50% - 720px - 16px);
+  width: 1456.68px;
+  height: 195.741px;
+  max-width: none;
+  pointer-events: none;
+}
+
+.eventos__title {
+  max-width: calc(683.095px + 32px);
+  margin-inline: auto;
+  padding-inline: 16px;
+  font-size: 79.095px;
+  font-weight: 200;
+  line-height: 0.96;
+  letter-spacing: -3.1638px;
+}
+
+.eventos__title strong {
+  font-weight: 500;
+}
+
+.eventos__numero {
+  margin-top: 105px;
+  font-size: 289.239px;
+  font-weight: 200;
+  line-height: 0.88;
+  letter-spacing: -17.3543px;
+  white-space: nowrap;
+}
+
+/* Largura travada no valor final para o contador não "dançar" */
+.eventos__numero span {
+  display: inline-block;
+  text-align: left;
+}
+
+.eventos__desc {
+  max-width: calc(927.259px + 32px);
+  margin: 105.5px auto 0;
+  padding-inline: 16px;
+  color: var(--color-white);
+  font-size: 29.81px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1024px) {
+  .eventos {
+    height: auto;
+    padding-block: 80px 220px;
+  }
+
+  .eventos__title {
+    font-size: clamp(40px, 7vw, 79.095px);
+    letter-spacing: -0.04em;
+  }
+
+  .eventos__numero {
+    margin-top: 56px;
+    font-size: clamp(110px, 24vw, 289.239px);
+    letter-spacing: -0.06em;
+  }
+
+  .eventos__desc {
+    margin-top: 48px;
+    font-size: clamp(18px, 2.6vw, 29.81px);
+  }
+
+  .eventos__multidao {
+    top: auto;
+    bottom: -35px;
+  }
+
+  .eventos__kiwi {
+    left: calc(50% - 900px);
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,128 @@
+/* ---------- Seção 10: Taxas — Você só paga se vender (Figma 3:1114) ---------- */
+.taxas {
+  padding-block: 136px;
+  text-align: center;
+  color: var(--color-paper);
+  background: #0b5a37;
+}
+
+.taxas .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.taxas__title {
+  font-size: 88px;
+  font-weight: 200;
+  line-height: 0.96;
+  letter-spacing: -3.52px;
+}
+
+.taxas__title strong {
+  font-weight: 500;
+}
+
+.taxas__preco {
+  margin-top: 31.5px;
+  margin-right: 22px; /* no Figma a linha fica 11px à esquerda do centro (centro óptico) */
+  display: flex;
+  align-items: baseline;
+  gap: 28px;
+  font-weight: 200;
+  line-height: 0.88;
+  white-space: nowrap;
+}
+
+.taxas__pct {
+  font-size: 260px;
+  letter-spacing: -15.6px;
+}
+
+.taxas__fixo {
+  color: var(--color-lime);
+  font-size: 84px;
+  letter-spacing: -5.04px;
+}
+
+.taxas__desc {
+  max-width: 520px;
+  margin-top: 78.2px;
+  font-size: var(--text-lead-size);
+  font-weight: var(--text-lead-weight);
+  line-height: var(--text-lead-leading);
+}
+
+.taxas__chips {
+  margin-top: 31px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.taxas__chip {
+  padding: 10px 16px;
+  border: 1px solid var(--color-white);
+  border-radius: 999px;
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 11px;
+  line-height: 1.3;
+  letter-spacing: 0.88px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.taxas .btn {
+  margin-top: 31.7px;
+  width: 182px;
+  height: 56px;
+  /* hover/seta: padrão global em css/base.css */
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1024px) {
+  .taxas {
+    padding-block: 96px;
+  }
+
+  .taxas__title {
+    font-size: clamp(40px, 7vw, 88px);
+    letter-spacing: -0.04em;
+  }
+
+  .taxas__preco {
+    gap: 16px;
+    margin-right: 0;
+  }
+
+  .taxas__pct {
+    font-size: clamp(96px, 22vw, 260px);
+    letter-spacing: -0.06em;
+  }
+
+  .taxas__fixo {
+    font-size: clamp(32px, 7vw, 84px);
+    letter-spacing: -0.06em;
+  }
+
+  .taxas__desc {
+    margin-top: 48px;
+  }
+}
+
+@media (max-width: 560px) {
+  .taxas {
+    padding-block: 72px;
+  }
+
+  .taxas__preco {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .taxas__desc {
+    font-size: 17px;
+  }
+}

@@ -1,0 +1,492 @@
+/* ---------- Seção 2: Área de membros (Figma 1:1361) ---------- */
+.membros {
+  background: var(--color-surface);
+  min-height: 809px;
+  padding-block: 125.66px 64px;
+}
+
+.membros__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 86.747px;
+}
+
+.membros__texto {
+  width: 469.88px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25.301px;
+}
+
+.membros__title {
+  color: var(--color-ink);
+  font-size: 79.518px;
+  font-weight: 200;
+  line-height: 0.96;
+  letter-spacing: -3.1807px;
+}
+
+.membros__title strong {
+  font-weight: 500;
+}
+
+.membros__lead {
+  max-width: 397.59px;
+  color: var(--color-mute);
+  font-size: 17.169px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+/* Mockup da área de membros */
+.mockup {
+  flex: 1 0 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12.651px;
+  padding: 16.265px;
+  overflow: hidden;
+  background: var(--color-white);
+  border: 0.904px solid var(--color-line);
+  border-radius: 12.651px;
+}
+
+.mockup__bar {
+  padding-bottom: 12.651px;
+  border-bottom: 0.904px solid var(--color-line);
+  color: var(--color-ink);
+  font-size: 12.651px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.mockup__label {
+  color: var(--color-mute);
+  font-size: 9.94px;
+  line-height: 1.3;
+  letter-spacing: 0.7952px;
+  text-transform: uppercase;
+}
+
+/* Banner de destaque */
+.destaque {
+  position: relative;
+  height: 271.084px;
+  overflow: hidden;
+  border-radius: 7.229px;
+  background-image: linear-gradient(36.17deg, rgb(6, 49, 30) 8.61%, rgb(101, 255, 187) 247.37%);
+  isolation: isolate;
+}
+
+/* Kiwi decorativo (6 vetores, opacidade 14%) */
+.destaque__kiwi {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.kiwi-part {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  container-type: size;
+}
+
+.kiwi-part > div {
+  flex: none;
+  transform: rotate(-135deg) scaleX(-1);
+  opacity: 0.14;
+}
+
+.kiwi-part img {
+  width: 100%;
+  height: 100%;
+}
+
+.kiwi-part--1 { inset: -14.05% 28.35% -111.78% -28.86%; }
+.kiwi-part--1 > div { width: hypot(50cqw, 50cqh); height: hypot(50cqw, 50cqh); }
+.kiwi-part--2 { inset: 91.58% 55.46% -20.52% 31.66%; }
+.kiwi-part--2 > div { width: hypot(40.8826cqw, 40.8826cqh); height: hypot(59.1174cqw, 59.1174cqh); }
+.kiwi-part--3 { inset: 91.58% 88.87% -20.52% -1.75%; }
+.kiwi-part--3 > div { width: hypot(59.1174cqw, 59.1174cqh); height: hypot(40.8826cqw, 40.8826cqh); }
+.kiwi-part--4 { inset: 64.07% 72.06% 6.52% 14.85%; }
+.kiwi-part--4 > div { width: hypot(50.0067cqw, 50.0067cqh); height: hypot(49.9933cqw, 49.9933cqh); }
+.kiwi-part--5 { inset: 72.28% 62.03% -0.35% 25.48%; }
+.kiwi-part--5 > div { width: hypot(34.3352cqw, 34.3352cqh); height: hypot(65.6648cqw, 65.6648cqh); }
+.kiwi-part--6 { inset: 72.29% 82.68% -0.36% 4.82%; }
+.kiwi-part--6 > div { width: hypot(65.6558cqw, 65.6558cqh); height: hypot(34.3442cqw, 34.3442cqh); }
+
+/* Moedas + tingimento verde (mix-blend hue com máscara) */
+.destaque__coins {
+  position: absolute;
+  left: -6px;
+  top: -149.27px;
+  width: 731px;
+  height: 408px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.destaque__tint {
+  position: absolute;
+  left: 34.91px;
+  top: -90.3px;
+  width: 658.75px;
+  height: 311.047px;
+  background: #11d376;
+  mix-blend-mode: hue;
+  pointer-events: none;
+  -webkit-mask-image: url("../assets/img/membros/coins-mask.png");
+  mask-image: url("../assets/img/membros/coins-mask.png");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: -40.906px -58.969px;
+  mask-position: -40.906px -58.969px;
+  -webkit-mask-size: 731px 408px;
+  mask-size: 731px 408px;
+  mask-mode: alpha;
+}
+
+.destaque__eyebrow {
+  position: absolute;
+  left: 19.88px;
+  top: 206.02px;
+  color: var(--color-lime);
+  font-size: 9.94px;
+  line-height: 1.3;
+  letter-spacing: 0.7952px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.destaque__title {
+  position: absolute;
+  left: 19.88px;
+  top: 222.29px;
+  color: var(--color-paper);
+  font-size: 25.301px;
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.506px;
+  white-space: nowrap;
+}
+
+/* Fileiras de aulas */
+.fileira {
+  display: flex;
+  gap: 9.036px;
+}
+
+.card-aula {
+  position: relative;
+  flex: 1 0 0;
+  min-width: 0;
+  height: 93.976px;
+  overflow: hidden;
+  border: 0.904px solid var(--color-line);
+  border-radius: 5.422px;
+}
+
+.card-aula::before {
+  content: "";
+  position: absolute;
+  left: 6.32px;
+  top: 84.04px;
+  width: 81.325px;
+  height: 0.904px;
+  background: var(--color-ink);
+}
+
+.card-aula__progress {
+  position: absolute;
+  left: -0.9px;
+  top: 91.26px;
+  height: 1.807px;
+  background: var(--color-green);
+}
+
+/* ---------- Conteúdo do curso "Do zero ao primeiro milhão" ----------
+   Thumbs de aula (prints do instrutor falando) e capas de módulo com a fonte da página.
+   Fotos: assets/img/membros/curso/ (Licença Unsplash — ver CREDITOS.md). */
+.card-aula--thumb,
+.card-aula--modulo {
+  border-color: transparent;
+  background: var(--color-ink);
+  isolation: isolate;
+}
+
+.card-aula--thumb::before,
+.card-aula--modulo::before {
+  content: none; /* some o traço que representava o título no wireframe */
+}
+
+.card-aula__img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-aula:hover .card-aula__img {
+  transform: scale(1.06);
+}
+
+/* Thumb de aula: escurece embaixo para o título ler bem */
+.card-aula--thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top, rgba(6, 10, 8, 0.92) 0%, rgba(6, 10, 8, 0.35) 48%, rgba(6, 10, 8, 0) 70%);
+}
+
+.card-aula__dur {
+  position: absolute;
+  top: 5.42px;
+  right: 5.42px;
+  padding: 1.8px 4.5px;
+  border-radius: 999px;
+  background: rgba(6, 10, 8, 0.72);
+  color: var(--color-paper);
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 6.3px;
+  line-height: 1.3;
+  letter-spacing: 0.4px;
+}
+
+.card-aula__info {
+  position: absolute;
+  left: 7.2px;
+  right: 7.2px;
+  bottom: 8.6px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8px;
+  color: var(--color-paper);
+}
+
+.card-aula__num {
+  color: var(--color-lime);
+  font-size: 6.3px;
+  line-height: 1.3;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.card-aula__titulo {
+  font-size: 9.5px;
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Barra de progresso sobre a foto: trilho claro + preenchimento limão */
+.card-aula--thumb .card-aula__progress {
+  top: auto;
+  bottom: 0;
+  left: 0;
+  height: 2.7px;
+  background: var(--color-lime);
+  box-shadow: 0 0 6px rgba(185, 226, 106, 0.6);
+}
+
+.card-aula.card-aula--thumb::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  width: auto;
+  height: 2.7px;
+  background: rgba(244, 244, 239, 0.22);
+}
+
+/* Capa de módulo: foto em duotone verde + tipografia da página */
+.card-aula--modulo .card-aula__img {
+  filter: grayscale(1) contrast(1.15) brightness(0.9);
+}
+
+.card-aula--modulo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(150deg, rgba(20, 224, 127, 0.55) 0%, rgba(11, 122, 69, 0.85) 45%, rgba(6, 49, 30, 0.96) 100%);
+  mix-blend-mode: multiply;
+}
+
+.card-aula--modulo.is-escuro::after {
+  background: linear-gradient(150deg, rgba(185, 226, 106, 0.35) 0%, rgba(14, 16, 13, 0.85) 50%, rgba(14, 16, 13, 0.97) 100%);
+}
+
+.card-aula__modulo {
+  position: absolute;
+  inset: 7.2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: var(--color-paper);
+}
+
+.card-aula__topo {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.card-aula__rotulo {
+  font-family: "Geist Mono", ui-monospace, monospace;
+  font-size: 5.8px;
+  line-height: 1.3;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.card-aula__numero {
+  font-size: 30px;
+  font-weight: 200;
+  line-height: 0.8;
+  letter-spacing: -1.6px;
+}
+
+.card-aula--modulo.is-escuro .card-aula__numero {
+  color: var(--color-lime);
+}
+
+.card-aula__nome {
+  font-size: 10.8px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.3px;
+}
+
+.card-aula__nome span {
+  display: block;
+  font-weight: 200;
+}
+
+.card-aula__aulas {
+  margin-top: 3px;
+  font-size: 6.3px;
+  line-height: 1.3;
+  letter-spacing: 0.3px;
+  opacity: 0.75;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1100px) {
+  .membros {
+    min-height: 0;
+    padding-block: 96px;
+  }
+
+  .membros__row {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  .membros__texto {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .membros__title {
+    font-size: clamp(44px, 7vw, 79.518px);
+    letter-spacing: -0.04em;
+  }
+
+  .mockup {
+    width: 100%;
+    max-width: 680px;
+    flex: none;
+  }
+}
+
+@media (max-width: 560px) {
+  .membros {
+    padding-block: 72px;
+  }
+
+  .destaque {
+    height: 220px;
+  }
+
+  .destaque__eyebrow {
+    top: auto;
+    bottom: 50px;
+  }
+
+  .destaque__title {
+    top: auto;
+    bottom: 18px;
+    font-size: 20px;
+    white-space: normal;
+  }
+
+  .fileira {
+    gap: 6px;
+  }
+
+  .card-aula {
+    height: 72px;
+  }
+
+  .card-aula::before {
+    top: 62px;
+    width: 60%;
+  }
+
+  .card-aula__progress {
+    top: 69px;
+  }
+
+  /* cards de ~73px: título quebra em 2 linhas e número do módulo menor */
+  .card-aula__dur {
+    display: none;
+  }
+
+  .card-aula__info {
+    left: 5px;
+    right: 5px;
+    bottom: 6px;
+  }
+
+  .card-aula__titulo {
+    font-size: 7.6px;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .card-aula__modulo {
+    inset: 5px;
+  }
+
+  .card-aula__rotulo {
+    display: none;
+  }
+
+  .card-aula__numero {
+    font-size: 20px;
+  }
+
+  .card-aula__nome {
+    font-size: 8.4px;
+  }
+
+  .card-aula__aulas {
+    display: none;
+  }
+}

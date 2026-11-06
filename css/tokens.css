@@ -1,0 +1,30 @@
+/* Design tokens — espelham as variáveis do Figma (Landing Page Kiwify) */
+:root {
+  /* Cores */
+  --color-paper: #f4f4ef;
+  --color-ink: #0e100d;
+  --color-white: #ffffff;
+  --color-mute: #6b6e66;
+  --color-line: #d9d9d3;
+  --color-lime: #b9e26a;
+  --color-green: #0b7a45;
+  --color-surface: #eeeeee;
+
+  /* Tipografia */
+  --font-sans: "Urbanist", system-ui, sans-serif;
+
+  /* Body/Lead */
+  --text-lead-size: 19px;
+  --text-lead-weight: 300;
+  --text-lead-leading: 1.55;
+
+  /* Body/UI */
+  --text-ui-size: 14px;
+  --text-ui-weight: 400;
+  --text-ui-leading: 1.3;
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: 120px;
+  --radius-pill: 999px;
+}

@@ -1,0 +1,315 @@
+/* ---------- Seção 4: Quem chega lá, a gente celebra (Figma 2:178) ---------- */
+.premios {
+  background: var(--color-surface);
+  padding-block: 101px 102px;
+}
+
+.premios__row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+.premios__texto {
+  padding-top: 45.14px;
+  margin-left: -1px;
+}
+
+.premios__title {
+  width: 567px;
+  max-width: 100%;
+  color: var(--color-ink);
+  font-size: 84.713px;
+  font-weight: 200;
+  line-height: 0.96;
+  letter-spacing: -3.3885px;
+}
+
+.premios__title strong {
+  font-weight: 500;
+}
+
+.premios__lead {
+  max-width: 397.59px;
+  margin-top: 36.2px;
+  margin-left: 1px;
+  color: var(--color-mute);
+  font-size: 17.169px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+.premios__cards {
+  width: 548px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 58px;
+}
+
+/* Card de prêmio */
+.premio {
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-paper);
+  border: 1px solid var(--color-line);
+  border-radius: 18px;
+}
+
+/* ---------- Cards empilhando com o scroll ----------
+   O card de R$5M fica fixo (sticky) e o de R$10M sobe por cima dele.
+   --pilha-topo: distância do topo da tela onde os cards param (centralizados,
+   respeitando o menu fixo de 72px). js/premios.js grava --cobre (0 → 1) no card
+   de 5M enquanto ele é coberto: ele encolhe e escurece um pouco (profundidade). */
+.premios {
+  --pilha-topo: max(96px, calc(50vh - 355px));
+  --pilha-respiro: 140px; /* rolagem em que o card de Dubai fica parado sobre o de 5M */
+  padding-bottom: max(0px, calc(102px - var(--pilha-respiro)));
+}
+
+/* espaço extra no fim da coluna: sem ele o card de cima "passa direto" do de baixo.
+   (precisa ser um elemento — o padding do container não conta para o sticky) */
+.premios__cards::after {
+  content: "";
+  flex-shrink: 0;
+  height: var(--pilha-respiro);
+  margin-top: -58px; /* desconta o gap da coluna */
+}
+
+.premio--5m,
+.premio--10m {
+  position: sticky;
+  top: var(--pilha-topo);
+}
+
+.premio--5m {
+  --cobre: 0;
+  z-index: 1;
+  transform: scale(calc(1 - 0.06 * var(--cobre)));
+  transform-origin: 50% 0;
+}
+
+.premio--5m::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: #06110b;
+  opacity: calc(0.45 * var(--cobre));
+  pointer-events: none;
+}
+
+.premio--10m {
+  z-index: 2;
+  box-shadow: 0 -18px 50px -22px rgba(6, 17, 11, 0.45);
+}
+
+/* Texto da esquerda acompanha os cards enquanto eles empilham. Um sticky solta quando
+   a própria base encosta no fim da linha; com a mesma altura do card de Dubai (751px)
+   o texto solta junto com ele. */
+.premios__texto {
+  position: sticky;
+  top: var(--pilha-topo);
+  min-height: 751px;
+}
+
+.premio--10m {
+  width: 546px;
+  max-width: 100%;
+}
+
+.premio__midia {
+  position: relative;
+  height: 489px;
+  overflow: hidden;
+}
+
+.premio--5m .premio__midia {
+  background: radial-gradient(
+    ellipse 195px 152.81px at 234px 275.06px,
+    rgb(31, 122, 77) 0%,
+    rgb(18, 86, 53) 35%,
+    rgb(6, 49, 30) 70%
+  );
+}
+
+.premio--10m .premio__midia {
+  background: linear-gradient(to bottom, #2a2418, #0d0f0d 70%);
+}
+
+.premio__img {
+  position: absolute;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.premio--5m .premio__img {
+  left: -9px;
+  top: -104px;
+  width: 561px;
+  height: 747.746px;
+}
+
+.premio--10m .premio__img {
+  left: 0;
+  top: -173px;
+  width: 561px;
+  height: 836px;
+}
+
+.premio__shade {
+  position: absolute;
+  width: 555px;
+  height: 394px;
+  background-image: linear-gradient(196.66deg, rgba(0, 0, 0, 0) 29.73%, rgb(0, 0, 0) 76%);
+}
+
+.premio--5m .premio__shade {
+  left: -9px;
+  top: 95px;
+}
+
+.premio--10m .premio__shade {
+  left: -10px;
+  top: 122px;
+}
+
+.premio__valor {
+  position: absolute;
+  left: 24px;
+  top: 319px;
+  color: var(--color-paper);
+  font-size: 112px;
+  font-weight: 200;
+  line-height: 0.88;
+  letter-spacing: -6.72px;
+  white-space: nowrap;
+}
+
+.premio__corpo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px;
+  overflow: hidden;
+}
+
+.premio__meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-mute);
+  font-size: 11px;
+  line-height: 1.3;
+  letter-spacing: 0.88px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.premio--5m .premio__meta span {
+  opacity: 0.5;
+}
+
+.premio--10m .premio__meta span {
+  opacity: 0.58;
+}
+
+.premio__title {
+  width: 560px;
+  color: var(--color-ink);
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 1.04;
+  letter-spacing: -1.2px;
+}
+
+.premio__desc {
+  width: 520px;
+  color: var(--color-mute);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.55;
+}
+
+.premio--10m .premio__desc {
+  width: 509px;
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1100px) {
+  .premios {
+    padding-block: 96px;
+  }
+
+  .premios__row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .premios__texto {
+    position: static; /* em coluna o texto rola normalmente; só os cards empilham */
+    padding-top: 0;
+    margin-left: 0;
+  }
+
+  .premios__title {
+    font-size: clamp(44px, 7vw, 84.713px);
+    letter-spacing: -0.04em;
+  }
+
+  .premios__cards {
+    width: 100%;
+    max-width: 548px;
+    margin-inline: auto;
+    gap: 32px;
+  }
+
+  .premio--10m {
+    width: 100%;
+  }
+
+  .premio__title,
+  .premio__desc,
+  .premio--10m .premio__desc {
+    width: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .premios {
+    padding-block: 72px;
+  }
+
+  .premio__midia {
+    height: 380px;
+  }
+
+  .premio__img {
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+
+  .premio__shade {
+    top: auto !important;
+    bottom: 0;
+    left: 0 !important;
+    width: 100%;
+  }
+
+  .premio__valor {
+    top: auto;
+    bottom: 24px;
+    font-size: 84px;
+    letter-spacing: -0.06em;
+  }
+
+  .premio__corpo {
+    padding: 22px;
+  }
+
+  .premio__title {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,89 @@
+/* ---------- Transições com scroll (Figma 2:180 e 3:1115) ----------
+   A seção é alta (o "trilho" do scroll) e o palco fica fixo (sticky) enquanto
+   o JS (js/transicao.js) traduz o progresso do scroll em:
+   --stage  opacidade do fundo do palco (entrada suave)
+   --logo   opacidade do logo
+   --fade   cobertura final na cor da próxima seção
+   Cores por variante:
+   --t-from   cor da seção anterior (fundo antes do palco aparecer)
+   --t-stage  fundo do palco
+   --t-end    cor da próxima seção
+*/
+.transicao {
+  --stage: 0;
+  --logo: 0;
+  --fade: 0;
+  /* Transição 1 (padrão): Sessão 4 → verde + kiwi branco → Sessão 5 */
+  --t-from: var(--color-surface);
+  --t-stage: var(--color-green);
+  --t-end: var(--color-surface);
+  position: relative;
+  /* 100vh de palco + ~130vh de rolagem para o zoom inteiro */
+  height: 230vh;
+  background: var(--t-from);
+}
+
+/* Transição 2: FAQ → branco + kiwi verde → Sessão 10 (taxas) */
+.transicao--branca {
+  --t-stage: var(--color-white);
+  --t-end: #0b5a37;
+}
+
+.transicao__stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+}
+
+.transicao__bg {
+  position: absolute;
+  inset: 0;
+  background: var(--t-stage);
+  opacity: var(--stage);
+}
+
+/* Logo: antes do JS é um <img>; o JS troca por SVG inline com viewBox animado
+   (zoom vetorial, nítido em qualquer escala). */
+.transicao__logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 140px;
+  height: 140px;
+  transform: translate(-50%, -50%);
+  opacity: var(--logo);
+}
+
+.transicao__svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: var(--logo);
+  overflow: hidden;
+}
+
+.transicao__fade {
+  position: absolute;
+  inset: 0;
+  background: var(--t-end);
+  opacity: var(--fade);
+  pointer-events: none;
+}
+
+/* Versão estática (sistema com "reduzir movimento" ativo) — o JS aplica a classe */
+.transicao--static {
+  height: auto;
+}
+
+.transicao--static .transicao__stage {
+  position: relative;
+  height: 60vh;
+}
+
+.transicao--static .transicao__bg,
+.transicao--static .transicao__logo {
+  opacity: 1;
+}

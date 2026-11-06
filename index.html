@@ -1,0 +1,944 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiwify — Venda seu curso online</title>
+    <meta
+      name="description"
+      content="Checkout, pagamentos, área de membros e afiliados numa única plataforma."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist+Mono&family=Urbanist:wght@200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      // Loops decorativos (pulso, digitando…) só rodam se o sistema não pedir "reduzir movimento" — ou com ?anim
+      if (!matchMedia("(prefers-reduced-motion: reduce)").matches || new URLSearchParams(location.search).has("anim")) document.documentElement.classList.add("motion-ok");
+    </script>
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/membros.css" />
+    <link rel="stylesheet" href="css/aprovacao.css" />
+    <link rel="stylesheet" href="css/premios.css" />
+    <link rel="stylesheet" href="css/transicao.css" />
+    <link rel="stylesheet" href="css/posvenda.css" />
+    <link rel="stylesheet" href="css/eventos.css" />
+    <link rel="stylesheet" href="css/recursos.css" />
+    <link rel="stylesheet" href="css/depoimentos.css" />
+    <link rel="stylesheet" href="css/faq.css" />
+    <link rel="stylesheet" href="css/taxas.css" />
+    <link rel="stylesheet" href="css/app.css" />
+    <link rel="stylesheet" href="css/rodape.css" />
+  </head>
+  <body>
+    <!-- Menu fixo de ponta a ponta; o tema (claro/escuro) acompanha a seção embaixo (js/nav.js) -->
+    <nav class="nav" aria-label="Principal">
+      <div class="nav__inner">
+        <a class="nav__logo" href="#" aria-label="Kiwify — início">
+          <img src="assets/img/kiwify-logo.svg" alt="Kiwify" width="120" height="31.5235" />
+        </a>
+        <ul class="nav__links">
+          <li><a href="#taxas">Taxas</a></li>
+          <li><a href="#duvidas">Dúvidas</a></li>
+          <li><a href="#">Central de ajuda</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Aprenda a vender</a></li>
+        </ul>
+        <div class="nav__ctas">
+          <a class="btn btn--outline-light" href="#">Entrar</a>
+          <a class="btn btn--light" href="#">Começar a vender <svg class="btn__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 13L13 1M13 10V1H4" stroke="currentColor"/></svg></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Seção 1: Hero -->
+    <header class="hero" data-nav="dark">
+      <!-- Fundo: 100% vídeo (logo 3D no mesmo lugar do design), estendido no fundo escuro -->
+      <div class="hero__media" aria-hidden="true">
+        <video class="hero__video" src="assets/video/hero-logo.mp4" muted loop playsinline autoplay preload="auto"></video>
+        <div class="hero__scrim"></div>
+      </div>
+
+      <div class="container hero__content">
+        <h1 class="hero__title">
+          Venda seu curso<br />
+          online. <strong>A estrutura,</strong><br />
+          deixa com a gente.
+        </h1>
+
+        <div class="hero__side">
+          <p class="hero__lead">
+            Checkout, pagamentos, área de membros e afiliados numa única plataforma, pra você
+            transformar o que sabe em um negócio de verdade na internet.
+          </p>
+          <a class="btn btn--light" href="#">
+            Começar a vender
+            <svg class="btn__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 13L13 1M13 10V1H4" stroke="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Seção 2: Área de membros -->
+      <section class="membros" data-nav="light" aria-labelledby="membros-title">
+        <div class="container membros__row">
+          <div class="membros__texto">
+            <h2 class="membros__title" id="membros-title">
+              Uma área de membros<br />
+              <strong>com cara de streaming.</strong>
+            </h2>
+            <p class="membros__lead">
+              Personalize cada detalhe e entregue aos seus alunos uma experiência cinematográfica. A
+              hospedagem, inclusive dos vídeos, é por nossa conta.
+            </p>
+          </div>
+
+          <div class="mockup" aria-hidden="true">
+            <p class="mockup__bar">Sua escola</p>
+
+            <div class="destaque">
+              <div class="destaque__kiwi">
+                <div class="kiwi-part kiwi-part--1"><div><img src="assets/img/membros/kiwi-1.svg" alt="" /></div></div>
+                <div class="kiwi-part kiwi-part--2"><div><img src="assets/img/membros/kiwi-2.svg" alt="" /></div></div>
+                <div class="kiwi-part kiwi-part--3"><div><img src="assets/img/membros/kiwi-3.svg" alt="" /></div></div>
+                <div class="kiwi-part kiwi-part--4"><div><img src="assets/img/membros/kiwi-4.svg" alt="" /></div></div>
+                <div class="kiwi-part kiwi-part--5"><div><img src="assets/img/membros/kiwi-5.svg" alt="" /></div></div>
+                <div class="kiwi-part kiwi-part--6"><div><img src="assets/img/membros/kiwi-6.svg" alt="" /></div></div>
+              </div>
+              <p class="destaque__eyebrow">Novo módulo</p>
+              <p class="destaque__title">Do zero ao primeiro milhão</p>
+              <img class="destaque__coins" src="assets/img/membros/coins.png" alt="" loading="lazy" />
+              <div class="destaque__tint"></div>
+            </div>
+
+            <p class="mockup__label">Continue assistindo</p>
+            <!-- Curso fictício "Do zero ao primeiro milhão" — fotos: assets/img/membros/curso/CREDITOS.md -->
+            <div class="fileira">
+              <div class="card-aula card-aula--thumb">
+                <img class="card-aula__img" src="assets/img/membros/curso/aula-03.jpg" alt="" loading="lazy" />
+                <span class="card-aula__dur">18:42</span>
+                <div class="card-aula__info"><span class="card-aula__num">Aula 03</span><span class="card-aula__titulo">Encontre seu nicho</span></div>
+                <span class="card-aula__progress" style="width: 75%"></span>
+              </div>
+              <div class="card-aula card-aula--thumb">
+                <img class="card-aula__img" src="assets/img/membros/curso/aula-07.jpg" alt="" loading="lazy" />
+                <span class="card-aula__dur">22:15</span>
+                <div class="card-aula__info"><span class="card-aula__num">Aula 07</span><span class="card-aula__titulo">Preço que vende</span></div>
+                <span class="card-aula__progress" style="width: 41%"></span>
+              </div>
+              <div class="card-aula card-aula--thumb">
+                <img class="card-aula__img" src="assets/img/membros/curso/aula-12.jpg" alt="" loading="lazy" />
+                <span class="card-aula__dur">31:08</span>
+                <div class="card-aula__info"><span class="card-aula__num">Aula 12</span><span class="card-aula__titulo">Seu primeiro lançamento</span></div>
+                <span class="card-aula__progress" style="width: 19%"></span>
+              </div>
+              <div class="card-aula card-aula--thumb">
+                <img class="card-aula__img" src="assets/img/membros/curso/aula-15.jpg" alt="" loading="lazy" />
+                <span class="card-aula__dur">26:30</span>
+                <div class="card-aula__info"><span class="card-aula__num">Aula 15</span><span class="card-aula__titulo">Tráfego sem medo</span></div>
+                <span class="card-aula__progress" style="width: 93%"></span>
+              </div>
+            </div>
+
+            <p class="mockup__label">Módulos</p>
+            <div class="fileira">
+              <div class="card-aula card-aula--modulo">
+                <img class="card-aula__img" src="assets/img/membros/curso/modulo-01.jpg" alt="" loading="lazy" />
+                <div class="card-aula__modulo">
+                  <div class="card-aula__topo"><span class="card-aula__rotulo">Módulo</span><span class="card-aula__numero">01</span></div>
+                  <div><p class="card-aula__nome"><span>Mentalidade</span>de dono</p><p class="card-aula__aulas">6 aulas</p></div>
+                </div>
+              </div>
+              <div class="card-aula card-aula--modulo is-escuro">
+                <img class="card-aula__img" src="assets/img/membros/curso/modulo-02.jpg" alt="" loading="lazy" />
+                <div class="card-aula__modulo">
+                  <div class="card-aula__topo"><span class="card-aula__rotulo">Módulo</span><span class="card-aula__numero">02</span></div>
+                  <div><p class="card-aula__nome"><span>Produto</span>que vende</p><p class="card-aula__aulas">8 aulas</p></div>
+                </div>
+              </div>
+              <div class="card-aula card-aula--modulo">
+                <img class="card-aula__img" src="assets/img/membros/curso/modulo-03.jpg" alt="" loading="lazy" />
+                <div class="card-aula__modulo">
+                  <div class="card-aula__topo"><span class="card-aula__rotulo">Módulo</span><span class="card-aula__numero">03</span></div>
+                  <div><p class="card-aula__nome"><span>Lançamento</span>na prática</p><p class="card-aula__aulas">7 aulas</p></div>
+                </div>
+              </div>
+              <div class="card-aula card-aula--modulo is-escuro">
+                <img class="card-aula__img" src="assets/img/membros/curso/modulo-04.jpg" alt="" loading="lazy" />
+                <div class="card-aula__modulo">
+                  <div class="card-aula__topo"><span class="card-aula__rotulo">Módulo</span><span class="card-aula__numero">04</span></div>
+                  <div><p class="card-aula__nome"><span>Escala</span>e tráfego</p><p class="card-aula__aulas">9 aulas</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 3: Mais vendas aprovadas (KiwiPay) -->
+      <section class="aprovacao" data-nav="dark" aria-labelledby="aprovacao-title">
+        <h2 class="aprovacao__title" id="aprovacao-title">
+          Mais vendas aprovadas.<br />
+          <strong>Menos dinheiro<br />deixado na mesa.</strong>
+        </h2>
+        <p class="aprovacao__lead">
+          A KiwiPay é o nosso próprio processador de pagamentos. Sem intermediários no caminho,
+          menos vendas recusadas.
+        </p>
+
+        <div class="dial" role="img" aria-label="Mais de 90% de aprovação no cartão">
+          <div class="dial__vetor" aria-hidden="true">
+            <span class="dv" style="inset:0"><img src="assets/img/aprovacao/dial/02ab8.svg" alt="" /></span>
+            <span class="dv" style="inset:22.37%"><img src="assets/img/aprovacao/dial/5204e.svg" alt="" /></span>
+            <span class="dv" style="inset:17.43% 63.41% 70.69% 24.71%"><span style="inset:-31.53%"><img src="assets/img/aprovacao/dial/a38ac.svg" alt="" /></span></span>
+            <span class="dv" style="inset:23.03%"><span style="inset:-0.12%"><img src="assets/img/aprovacao/dial/2b518.svg" alt="" /></span></span>
+            <span class="dv" style="inset:12.89% 50% 85.26% 50%"><span style="inset:0 -0.82px"><img src="assets/img/aprovacao/dial/c7e7d.svg" alt="" /></span></span>
+            <span class="dv" style="inset:12.97% 47.67% 86.24% 52.28%"><span style="inset:-0.42% -105.05%"><img src="assets/img/aprovacao/dial/a58dd.svg" alt="" /></span></span>
+            <span class="dv" style="inset:13.19% 45.35% 86.03% 54.55%"><span style="inset:-0.84% -52.92%"><img src="assets/img/aprovacao/dial/fc46e.svg" alt="" /></span></span>
+            <span class="dv" style="inset:13.55% 43.05% 85.67% 56.81%"><span style="inset:-1.26% -35.09%"><img src="assets/img/aprovacao/dial/0bd23.svg" alt="" /></span></span>
+            <span class="dv" style="inset:14.06% 40.77% 85.17% 59.03%"><span style="inset:-1.71% -26%"><img src="assets/img/aprovacao/dial/92db1.svg" alt="" /></span></span>
+            <span class="dv" style="inset:14.71% 38.53% 84.04% 61.06%"><span style="inset:-1.3% -12.31%"><img src="assets/img/aprovacao/dial/8b028.svg" alt="" /></span></span>
+            <span class="dv" style="inset:15.5% 36.34% 83.77% 63.37%"><span style="inset:-2.64% -16.83%"><img src="assets/img/aprovacao/dial/087c5.svg" alt="" /></span></span>
+            <span class="dv" style="inset:16.43% 34.2% 82.86% 65.46%"><span style="inset:-3.13% -14.2%"><img src="assets/img/aprovacao/dial/4415f.svg" alt="" /></span></span>
+            <span class="dv" style="inset:17.48% 32.13% 81.82% 67.49%"><span style="inset:-3.66% -12.13%"><img src="assets/img/aprovacao/dial/22408.svg" alt="" /></span></span>
+            <span class="dv" style="inset:18.67% 30.12% 80.66% 69.46%"><span style="inset:-4.22% -10.53%"><img src="assets/img/aprovacao/dial/f7152.svg" alt="" /></span></span>
+            <span class="dv" style="inset:19.98% 28.19% 78.53% 70.73%"><span style="inset:-3.12% -5.9%"><img src="assets/img/aprovacao/dial/f69a0.svg" alt="" /></span></span>
+            <span class="dv" style="inset:21.41% 26.35% 77.98% 73.15%"><span style="inset:-5.52% -8.07%"><img src="assets/img/aprovacao/dial/9dc0f.svg" alt="" /></span></span>
+            <span class="dv" style="inset:22.95% 24.6% 76.47% 74.86%"><span style="inset:-6.26% -7.11%"><img src="assets/img/aprovacao/dial/dbf21.svg" alt="" /></span></span>
+            <span class="dv" style="inset:24.6% 22.95% 74.86% 76.47%"><span style="inset:-7.11% -6.26%"><img src="assets/img/aprovacao/dial/d7b00.svg" alt="" /></span></span>
+            <span class="dv" style="inset:26.35% 21.41% 73.15% 77.98%"><span style="inset:-8.07% -5.52%"><img src="assets/img/aprovacao/dial/59d81.svg" alt="" /></span></span>
+            <span class="dv" style="inset:28.19% 19.98% 71.04% 78.95%"><span style="inset:-5.5% -2.91%"><img src="assets/img/aprovacao/dial/f37b3.svg" alt="" /></span></span>
+            <span class="dv" style="inset:30.12% 18.67% 69.46% 80.66%"><span style="inset:-10.53% -4.22%"><img src="assets/img/aprovacao/dial/a625e.svg" alt="" /></span></span>
+            <span class="dv" style="inset:32.12% 17.48% 67.49% 81.82%"><span style="inset:-12.13% -3.66%"><img src="assets/img/aprovacao/dial/b6428.svg" alt="" /></span></span>
+            <span class="dv" style="inset:34.2% 16.43% 65.46% 82.86%"><span style="inset:-14.2% -3.13%"><img src="assets/img/aprovacao/dial/0fb10.svg" alt="" /></span></span>
+            <span class="dv" style="inset:36.34% 15.5% 63.37% 83.77%"><span style="inset:-16.83% -2.64%"><img src="assets/img/aprovacao/dial/e06f8.svg" alt="" /></span></span>
+            <span class="dv" style="inset:38.53% 14.71% 60.9% 83.54%"><span style="inset:-13.21% -1.39%"><img src="assets/img/aprovacao/dial/8ae80.svg" alt="" /></span></span>
+            <span class="dv" style="inset:40.77% 14.06% 59.03% 85.18%"><span style="inset:-26% -1.71%"><img src="assets/img/aprovacao/dial/88678.svg" alt="" /></span></span>
+            <span class="dv" style="inset:43.05% 13.55% 56.81% 85.67%"><span style="inset:-35.09% -1.26%"><img src="assets/img/aprovacao/dial/86e3e.svg" alt="" /></span></span>
+            <span class="dv" style="inset:45.35% 13.19% 54.55% 86.03%"><span style="inset:-52.92% -0.84%"><img src="assets/img/aprovacao/dial/41420.svg" alt="" /></span></span>
+            <span class="dv" style="inset:47.67% 12.97% 52.28% 86.24%"><span style="inset:-105.05% -0.42%"><img src="assets/img/aprovacao/dial/44118.svg" alt="" /></span></span>
+            <span class="dv" style="inset:50% 12.89% 50% 85.79%"><span style="inset:-0.55px 0"><img src="assets/img/aprovacao/dial/cbdab.svg" alt="" /></span></span>
+            <span class="dv" style="inset:52.28% 12.97% 47.67% 86.24%"><span style="inset:-105.05% -0.42%"><img src="assets/img/aprovacao/dial/e08ac.svg" alt="" /></span></span>
+            <span class="dv" style="inset:54.55% 13.19% 45.35% 86.03%"><span style="inset:-52.92% -0.84%"><img src="assets/img/aprovacao/dial/c2f80.svg" alt="" /></span></span>
+            <span class="dv" style="inset:56.81% 13.55% 43.05% 85.67%"><span style="inset:-35.09% -1.26%"><img src="assets/img/aprovacao/dial/b0b4b.svg" alt="" /></span></span>
+            <span class="dv" style="inset:59.03% 14.06% 40.77% 85.18%"><span style="inset:-26% -1.71%"><img src="assets/img/aprovacao/dial/dc25f.svg" alt="" /></span></span>
+            <span class="dv" style="inset:60.9% 14.71% 38.53% 83.54%"><span style="inset:-13.21% -1.39%"><img src="assets/img/aprovacao/dial/f3e0b.svg" alt="" /></span></span>
+            <span class="dv" style="inset:63.37% 15.5% 36.34% 83.77%"><span style="inset:-16.83% -2.64%"><img src="assets/img/aprovacao/dial/c8142.svg" alt="" /></span></span>
+            <span class="dv" style="inset:65.46% 16.43% 34.2% 82.86%"><span style="inset:-14.2% -3.13%"><img src="assets/img/aprovacao/dial/4135b.svg" alt="" /></span></span>
+            <span class="dv" style="inset:67.49% 17.48% 32.13% 81.82%"><span style="inset:-12.13% -3.66%"><img src="assets/img/aprovacao/dial/7ea27.svg" alt="" /></span></span>
+            <span class="dv" style="inset:69.46% 18.67% 30.12% 80.66%"><span style="inset:-10.53% -4.22%"><img src="assets/img/aprovacao/dial/8ab92.svg" alt="" /></span></span>
+            <span class="dv" style="inset:71.04% 19.98% 28.19% 78.95%"><span style="inset:-5.5% -2.91%"><img src="assets/img/aprovacao/dial/1ffae.svg" alt="" /></span></span>
+            <span class="dv" style="inset:73.15% 21.41% 26.35% 77.98%"><span style="inset:-8.07% -5.52%"><img src="assets/img/aprovacao/dial/49c76.svg" alt="" /></span></span>
+            <span class="dv" style="inset:74.86% 22.95% 24.6% 76.47%"><span style="inset:-7.11% -6.26%"><img src="assets/img/aprovacao/dial/79702.svg" alt="" /></span></span>
+            <span class="dv" style="inset:76.47% 24.6% 22.95% 74.86%"><span style="inset:-6.26% -7.11%"><img src="assets/img/aprovacao/dial/95576.svg" alt="" /></span></span>
+            <span class="dv" style="inset:77.98% 26.35% 21.41% 73.15%"><span style="inset:-5.52% -8.07%"><img src="assets/img/aprovacao/dial/73acb.svg" alt="" /></span></span>
+            <span class="dv" style="inset:78.53% 28.19% 19.98% 70.73%"><span style="inset:-3.12% -5.9%"><img src="assets/img/aprovacao/dial/be836.svg" alt="" /></span></span>
+            <span class="dv" style="inset:80.66% 30.12% 18.67% 69.46%"><span style="inset:-4.22% -10.53%"><img src="assets/img/aprovacao/dial/200c0.svg" alt="" /></span></span>
+            <span class="dv" style="inset:81.82% 32.13% 17.48% 67.49%"><span style="inset:-3.66% -12.13%"><img src="assets/img/aprovacao/dial/f565c.svg" alt="" /></span></span>
+            <span class="dv" style="inset:82.86% 34.2% 16.43% 65.46%"><span style="inset:-3.13% -14.2%"><img src="assets/img/aprovacao/dial/9bd89.svg" alt="" /></span></span>
+            <span class="dv" style="inset:83.77% 36.34% 15.5% 63.37%"><span style="inset:-2.64% -16.83%"><img src="assets/img/aprovacao/dial/b8c07.svg" alt="" /></span></span>
+            <span class="dv" style="inset:84.04% 38.53% 14.71% 61.06%"><span style="inset:-1.3% -12.31%"><img src="assets/img/aprovacao/dial/38348.svg" alt="" /></span></span>
+            <span class="dv" style="inset:85.18% 40.77% 14.06% 59.03%"><span style="inset:-1.71% -26%"><img src="assets/img/aprovacao/dial/08d3c.svg" alt="" /></span></span>
+            <span class="dv" style="inset:85.67% 43.05% 13.55% 56.81%"><span style="inset:-1.26% -35.09%"><img src="assets/img/aprovacao/dial/0a05e.svg" alt="" /></span></span>
+            <span class="dv" style="inset:86.03% 45.35% 13.19% 54.55%"><span style="inset:-0.84% -52.92%"><img src="assets/img/aprovacao/dial/52bd3.svg" alt="" /></span></span>
+            <span class="dv" style="inset:86.24% 47.67% 12.97% 52.28%"><span style="inset:-0.42% -105.05%"><img src="assets/img/aprovacao/dial/69fd5.svg" alt="" /></span></span>
+            <span class="dv" style="inset:85.26% 50% 12.89% 50%"><span style="inset:0 -0.82px"><img src="assets/img/aprovacao/dial/2c35e.svg" alt="" /></span></span>
+            <span class="dv" style="inset:86.24% 52.28% 12.97% 47.67%"><span style="inset:-0.42% -105.05%"><img src="assets/img/aprovacao/dial/9a7b9.svg" alt="" /></span></span>
+            <span class="dv" style="inset:86.03% 54.55% 13.19% 45.35%"><span style="inset:-0.84% -52.92%"><img src="assets/img/aprovacao/dial/5defd.svg" alt="" /></span></span>
+            <span class="dv" style="inset:85.67% 56.81% 13.55% 43.05%"><span style="inset:-1.26% -35.09%"><img src="assets/img/aprovacao/dial/210b1.svg" alt="" /></span></span>
+            <span class="dv" style="inset:85.18% 59.03% 14.06% 40.77%"><span style="inset:-1.71% -26%"><img src="assets/img/aprovacao/dial/359c7.svg" alt="" /></span></span>
+            <span class="dv" style="inset:84.04% 61.06% 14.71% 38.53%"><span style="inset:-1.3% -12.31%"><img src="assets/img/aprovacao/dial/b29a8.svg" alt="" /></span></span>
+            <span class="dv" style="inset:83.77% 63.37% 15.5% 36.34%"><span style="inset:-2.64% -16.83%"><img src="assets/img/aprovacao/dial/ab2db.svg" alt="" /></span></span>
+            <span class="dv" style="inset:82.86% 65.46% 16.43% 34.2%"><span style="inset:-3.13% -14.2%"><img src="assets/img/aprovacao/dial/6a445.svg" alt="" /></span></span>
+            <span class="dv" style="inset:81.82% 67.49% 17.48% 32.13%"><span style="inset:-3.66% -12.13%"><img src="assets/img/aprovacao/dial/e78f3.svg" alt="" /></span></span>
+            <span class="dv" style="inset:80.66% 69.46% 18.67% 30.12%"><span style="inset:-4.22% -10.53%"><img src="assets/img/aprovacao/dial/d56c2.svg" alt="" /></span></span>
+            <span class="dv" style="inset:78.53% 70.73% 19.98% 28.19%"><span style="inset:-3.12% -5.9%"><img src="assets/img/aprovacao/dial/2ce31.svg" alt="" /></span></span>
+            <span class="dv" style="inset:77.98% 73.15% 21.41% 26.35%"><span style="inset:-5.52% -8.07%"><img src="assets/img/aprovacao/dial/520bc.svg" alt="" /></span></span>
+            <span class="dv" style="inset:76.47% 74.86% 22.95% 24.6%"><span style="inset:-6.26% -7.11%"><img src="assets/img/aprovacao/dial/f4970.svg" alt="" /></span></span>
+            <span class="dv" style="inset:74.86% 76.47% 24.6% 22.95%"><span style="inset:-7.11% -6.26%"><img src="assets/img/aprovacao/dial/e4b02.svg" alt="" /></span></span>
+            <span class="dv" style="inset:73.15% 77.98% 26.35% 21.41%"><span style="inset:-8.07% -5.52%"><img src="assets/img/aprovacao/dial/ce86d.svg" alt="" /></span></span>
+            <span class="dv" style="inset:71.04% 78.95% 28.19% 19.98%"><span style="inset:-5.5% -2.91%"><img src="assets/img/aprovacao/dial/72d6e.svg" alt="" /></span></span>
+            <span class="dv" style="inset:69.46% 80.66% 30.12% 18.67%"><span style="inset:-10.53% -4.22%"><img src="assets/img/aprovacao/dial/547aa.svg" alt="" /></span></span>
+            <span class="dv" style="inset:67.49% 81.82% 32.13% 17.48%"><span style="inset:-12.13% -3.66%"><img src="assets/img/aprovacao/dial/9ed9d.svg" alt="" /></span></span>
+            <span class="dv" style="inset:65.46% 82.86% 34.2% 16.43%"><span style="inset:-14.2% -3.13%"><img src="assets/img/aprovacao/dial/30a59.svg" alt="" /></span></span>
+            <span class="dv" style="inset:63.37% 83.77% 36.34% 15.5%"><span style="inset:-16.83% -2.64%"><img src="assets/img/aprovacao/dial/f7a68.svg" alt="" /></span></span>
+            <span class="dv" style="inset:60.9% 83.54% 38.53% 14.71%"><span style="inset:-13.21% -1.39%"><img src="assets/img/aprovacao/dial/da0bf.svg" alt="" /></span></span>
+            <span class="dv" style="inset:59.03% 85.18% 40.77% 14.06%"><span style="inset:-26% -1.71%"><img src="assets/img/aprovacao/dial/0b69b.svg" alt="" /></span></span>
+            <span class="dv" style="inset:56.81% 85.67% 43.05% 13.55%"><span style="inset:-35.09% -1.26%"><img src="assets/img/aprovacao/dial/e4cf4.svg" alt="" /></span></span>
+            <span class="dv" style="inset:54.55% 86.03% 45.35% 13.19%"><span style="inset:-52.92% -0.84%"><img src="assets/img/aprovacao/dial/9e798.svg" alt="" /></span></span>
+            <span class="dv" style="inset:52.28% 86.24% 47.67% 12.97%"><span style="inset:-105.05% -0.42%"><img src="assets/img/aprovacao/dial/b7f9d.svg" alt="" /></span></span>
+            <span class="dv" style="inset:50% 85.79% 50% 12.89%"><span style="inset:-0.55px 0"><img src="assets/img/aprovacao/dial/3f16f.svg" alt="" /></span></span>
+            <span class="dv" style="inset:47.67% 86.24% 52.28% 12.97%"><span style="inset:-105.05% -0.42%"><img src="assets/img/aprovacao/dial/144e9.svg" alt="" /></span></span>
+            <span class="dv" style="inset:45.35% 86.03% 54.55% 13.19%"><span style="inset:-52.92% -0.84%"><img src="assets/img/aprovacao/dial/03192.svg" alt="" /></span></span>
+            <span class="dv" style="inset:43.05% 85.67% 56.81% 13.55%"><span style="inset:-35.09% -1.26%"><img src="assets/img/aprovacao/dial/c60ae.svg" alt="" /></span></span>
+            <span class="dv" style="inset:40.77% 85.18% 59.03% 14.06%"><span style="inset:-26% -1.71%"><img src="assets/img/aprovacao/dial/518f6.svg" alt="" /></span></span>
+            <span class="dv" style="inset:38.53% 83.54% 60.9% 14.71%"><span style="inset:-13.21% -1.39%"><img src="assets/img/aprovacao/dial/58388.svg" alt="" /></span></span>
+            <span class="dv" style="inset:36.34% 83.77% 63.37% 15.5%"><span style="inset:-16.83% -2.64%"><img src="assets/img/aprovacao/dial/01ea9.svg" alt="" /></span></span>
+            <span class="dv" style="inset:34.2% 82.86% 65.46% 16.43%"><span style="inset:-14.2% -3.13%"><img src="assets/img/aprovacao/dial/3fe5f.svg" alt="" /></span></span>
+            <span class="dv" style="inset:32.12% 81.82% 67.49% 17.48%"><span style="inset:-12.13% -3.66%"><img src="assets/img/aprovacao/dial/b0f48.svg" alt="" /></span></span>
+            <span class="dv" style="inset:30.12% 80.66% 69.46% 18.67%"><span style="inset:-10.53% -4.22%"><img src="assets/img/aprovacao/dial/e8365.svg" alt="" /></span></span>
+            <span class="dv" style="inset:28.19% 78.95% 71.04% 19.98%"><span style="inset:-5.5% -2.91%"><img src="assets/img/aprovacao/dial/1ef52.svg" alt="" /></span></span>
+            <span class="dv" style="inset:26.35% 77.98% 73.15% 21.41%"><span style="inset:-8.07% -5.52%"><img src="assets/img/aprovacao/dial/bbafc.svg" alt="" /></span></span>
+            <span class="dv" style="inset:24.6% 76.47% 74.86% 22.95%"><span style="inset:-7.11% -6.26%"><img src="assets/img/aprovacao/dial/0a5c7.svg" alt="" /></span></span>
+            <span class="dv" style="inset:22.95% 74.86% 76.47% 24.6%"><span style="inset:-6.26% -7.11%"><img src="assets/img/aprovacao/dial/626c4.svg" alt="" /></span></span>
+            <span class="dv" style="inset:21.41% 73.15% 77.98% 26.35%"><span style="inset:-5.52% -8.07%"><img src="assets/img/aprovacao/dial/f9280.svg" alt="" /></span></span>
+            <span class="dv" style="inset:19.98% 70.73% 78.53% 28.19%"><span style="inset:-3.12% -5.9%"><img src="assets/img/aprovacao/dial/038fb.svg" alt="" /></span></span>
+            <span class="dv" style="inset:18.67% 69.46% 80.66% 30.12%"><span style="inset:-4.22% -10.53%"><img src="assets/img/aprovacao/dial/27df2.svg" alt="" /></span></span>
+            <span class="dv" style="inset:17.48% 67.49% 81.82% 32.13%"><span style="inset:-3.66% -12.13%"><img src="assets/img/aprovacao/dial/81982.svg" alt="" /></span></span>
+            <span class="dv" style="inset:16.43% 65.46% 82.86% 34.2%"><span style="inset:-3.13% -14.2%"><img src="assets/img/aprovacao/dial/188c9.svg" alt="" /></span></span>
+            <span class="dv" style="inset:15.5% 63.37% 83.77% 36.34%"><span style="inset:-2.64% -16.83%"><img src="assets/img/aprovacao/dial/ec90f.svg" alt="" /></span></span>
+            <span class="dv" style="inset:14.71% 61.06% 84.04% 38.53%"><span style="inset:-1.3% -12.31%"><img src="assets/img/aprovacao/dial/7b6dc.svg" alt="" /></span></span>
+            <span class="dv" style="inset:14.06% 59.03% 85.17% 40.77%"><span style="inset:-1.71% -26%"><img src="assets/img/aprovacao/dial/7e53d.svg" alt="" /></span></span>
+            <span class="dv" style="inset:13.55% 56.81% 85.67% 43.05%"><span style="inset:-1.26% -35.09%"><img src="assets/img/aprovacao/dial/961df.svg" alt="" /></span></span>
+            <span class="dv" style="inset:13.19% 54.55% 86.03% 45.35%"><span style="inset:-0.84% -52.92%"><img src="assets/img/aprovacao/dial/b80c5.svg" alt="" /></span></span>
+            <span class="dv" style="inset:12.97% 52.28% 86.24% 47.67%"><span style="inset:-0.42% -105.05%"><img src="assets/img/aprovacao/dial/e34df.svg" alt="" /></span></span>
+            <span class="dv" style="inset:17.11%"><img src="assets/img/aprovacao/dial/22e49.svg" alt="" /></span>
+            <span class="dv" style="inset:17.11% 50% 76.61% 30.66%"><span style="inset:-1.05% 0 -0.85% -0.2%"><img src="assets/img/aprovacao/dial/4bf68.svg" alt="" /></span></span>
+            <span class="dv" style="inset:17.11% 17.1% 17.11% 17.11%"><span style="inset:-0.3%"><img src="assets/img/aprovacao/dial/c0a8d.svg" alt="" /></span></span>
+            <span class="dv" style="inset:18.95%"><img src="assets/img/aprovacao/dial/bfc64.svg" alt="" /></span>
+            <span class="dv" style="inset:19.97% 65.91% 73.19% 27.24%"><span style="inset:-0.96%"><img src="assets/img/aprovacao/dial/ce212.svg" alt="" /></span></span>
+            <span class="dv" style="inset:21.41% 67.36% 74.64% 28.69%"><span style="inset:-1.67%"><img src="assets/img/aprovacao/dial/3f5de.svg" alt="" /></span></span>
+            <span class="dv" style="inset:22.6% 68.55% 75.82% 29.87%"><img src="assets/img/aprovacao/dial/c55f1.svg" alt="" /></span>
+            <span class="dv" style="inset:16.64% 49.54% 82.43% 49.54%"><span style="inset:-7.14%"><img src="assets/img/aprovacao/dial/9b133.svg" alt="" /></span></span>
+            <span class="dv" style="inset:22.97% 46.19% 76.45% 53.23%"><img src="assets/img/aprovacao/dial/63637.svg" alt="" /></span>
+            <span class="dv" style="inset:24.79% 39.39% 74.63% 60.03%"><img src="assets/img/aprovacao/dial/0833a.svg" alt="" /></span>
+            <span class="dv" style="inset:28.31% 33.29% 71.11% 66.13%"><img src="assets/img/aprovacao/dial/fafde.svg" alt="" /></span>
+            <span class="dv" style="inset:33.29% 28.31% 66.13% 71.11%"><img src="assets/img/aprovacao/dial/4b561.svg" alt="" /></span>
+            <span class="dv" style="inset:39.39% 24.79% 60.03% 74.63%"><img src="assets/img/aprovacao/dial/d2994.svg" alt="" /></span>
+            <span class="dv" style="inset:46.19% 22.97% 53.23% 76.45%"><img src="assets/img/aprovacao/dial/35d22.svg" alt="" /></span>
+            <span class="dv" style="inset:53.23% 22.97% 46.19% 76.45%"><img src="assets/img/aprovacao/dial/cc482.svg" alt="" /></span>
+            <span class="dv" style="inset:60.03% 24.79% 39.39% 74.63%"><img src="assets/img/aprovacao/dial/dbc4d.svg" alt="" /></span>
+            <span class="dv" style="inset:66.13% 28.31% 33.29% 71.11%"><img src="assets/img/aprovacao/dial/35d22.svg" alt="" /></span>
+            <span class="dv" style="inset:71.11% 33.29% 28.31% 66.13%"><img src="assets/img/aprovacao/dial/90b1a.svg" alt="" /></span>
+            <span class="dv" style="inset:74.63% 39.39% 24.79% 60.03%"><img src="assets/img/aprovacao/dial/080b2.svg" alt="" /></span>
+            <span class="dv" style="inset:76.45% 46.19% 22.97% 53.23%"><img src="assets/img/aprovacao/dial/43971.svg" alt="" /></span>
+            <span class="dv" style="inset:76.45% 53.23% 22.97% 46.19%"><img src="assets/img/aprovacao/dial/90b1a.svg" alt="" /></span>
+            <span class="dv" style="inset:74.63% 60.03% 24.79% 39.39%"><img src="assets/img/aprovacao/dial/77c47.svg" alt="" /></span>
+            <span class="dv" style="inset:71.11% 66.13% 28.31% 33.29%"><img src="assets/img/aprovacao/dial/cff2a.svg" alt="" /></span>
+            <span class="dv" style="inset:66.13% 71.11% 33.29% 28.31%"><img src="assets/img/aprovacao/dial/006eb.svg" alt="" /></span>
+            <span class="dv" style="inset:60.03% 74.63% 39.39% 24.79%"><img src="assets/img/aprovacao/dial/95d0f.svg" alt="" /></span>
+            <span class="dv" style="inset:53.23% 76.45% 46.19% 22.97%"><img src="assets/img/aprovacao/dial/9a2dc.svg" alt="" /></span>
+            <span class="dv" style="inset:46.19% 76.45% 53.23% 22.97%"><img src="assets/img/aprovacao/dial/006eb.svg" alt="" /></span>
+            <span class="dv" style="inset:39.39% 74.63% 60.03% 24.79%"><img src="assets/img/aprovacao/dial/6560f.svg" alt="" /></span>
+            <span class="dv" style="inset:33.29% 71.11% 66.13% 28.31%"><img src="assets/img/aprovacao/dial/aaa03.svg" alt="" /></span>
+            <span class="dv" style="inset:28.34% 66.16% 71.14% 33.32%"><span style="inset:-12.5%"><img src="assets/img/aprovacao/dial/1bfd2.svg" alt="" /></span></span>
+            <span class="dv" style="inset:24.82% 60.06% 74.66% 39.41%"><span style="inset:-12.5%"><img src="assets/img/aprovacao/dial/711d6.svg" alt="" /></span></span>
+            <span class="dv" style="inset:22.99% 53.26% 76.48% 46.22%"><span style="inset:-12.5%"><img src="assets/img/aprovacao/dial/711d6.svg" alt="" /></span></span>
+            <div class="chip chip--mastercard">
+              <img src="assets/img/aprovacao/check-de1aa.svg" alt="" />
+              <div class="chip__info">
+                <p class="chip__card">Mastercard •••• 0921</p>
+                <p class="chip__status">Aprovada</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dial__centro" aria-hidden="true">
+            <p class="dial__eyebrow">Aprovação no cartão</p>
+            <div class="dial__valor">
+              <span class="dial__plus">+</span>
+              <span class="dial__num">90</span>
+              <span class="dial__pct">%</span>
+            </div>
+          </div>
+
+          <div class="chip chip--cartao" aria-hidden="true">
+            <img src="assets/img/aprovacao/check-94bc8.svg" alt="" />
+            <div class="chip__info">
+              <p class="chip__card">Cartão •••• 4417</p>
+              <p class="chip__status">Aprovada</p>
+            </div>
+          </div>
+
+          <div class="chip chip--visa" aria-hidden="true">
+            <img src="assets/img/aprovacao/check-17f88.svg" alt="" />
+            <div class="chip__info">
+              <p class="chip__card">Visa •••• 3380</p>
+              <p class="chip__status">Aprovada</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 4: Quem chega lá, a gente celebra -->
+      <section class="premios" data-nav="light" aria-labelledby="premios-title">
+        <div class="container premios__row">
+          <div class="premios__texto">
+            <h2 class="premios__title" id="premios-title">
+              Quem chega lá,<br />
+              <strong>a gente celebra.</strong>
+            </h2>
+            <p class="premios__lead">
+              Na Kiwify, faturamento vira história. Cada marco tem uma recompensa à altura: do
+              microfone do Kiwicast a uma semana em Dubai.
+            </p>
+          </div>
+
+          <div class="premios__cards">
+            <article class="premio premio--5m">
+              <div class="premio__midia">
+                <img class="premio__img" src="assets/img/premios/premio-5m.jpg" alt="Skyline noturno com roda-gigante iluminada" loading="lazy" />
+                <div class="premio__shade"></div>
+                <p class="premio__valor">R$5M</p>
+              </div>
+              <div class="premio__corpo">
+                <div class="premio__meta">
+                  <span>Kiwicast</span>
+                  <span>Balneário Camboriú</span>
+                </div>
+                <h3 class="premio__title">O palco de quem chegou lá.</h3>
+                <p class="premio__desc">
+                  O Kiwicast é o podcast oficial da Kiwify, com milhões de visualizações por mês.
+                  Bateu R$5 milhões em vendas? Sua viagem pra Balneário Camboriú, com tudo pago, já
+                  tem data: é a gravação do seu episódio.
+                </p>
+              </div>
+            </article>
+
+            <article class="premio premio--10m">
+              <div class="premio__midia">
+                <img class="premio__img" src="assets/img/premios/premio-10m-dubai.jpg" alt="Vista aérea de Dubai ao pôr do sol com o Burj Khalifa" loading="lazy" />
+                <div class="premio__shade"></div>
+                <p class="premio__valor">R$10M</p>
+              </div>
+              <div class="premio__corpo">
+                <div class="premio__meta">
+                  <span>Viagem</span>
+                  <span>Dubai</span>
+                </div>
+                <h3 class="premio__title">R$10 milhões. Próximo destino: Dubai.</h3>
+                <p class="premio__desc">
+                  Você e um acompanhante, 7 dias, tudo pago. Lamborghini, iate, alta gastronomia e
+                  hotéis de luxo. E uma placa exclusiva pra marcar o tamanho da conquista.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transição 1 com scroll: verde → logo cresce → branco (js/transicao.js) -->
+      <div class="transicao" data-nav-from="light" data-nav-stage="dark" data-nav-end="light" aria-hidden="true">
+        <div class="transicao__stage">
+          <div class="transicao__bg"></div>
+          <img class="transicao__logo" src="assets/img/kiwi-transicao.svg" alt="" />
+          <div class="transicao__fade"></div>
+        </div>
+      </div>
+
+      <!-- Seção 5: Tudo que acontece depois da venda -->
+      <section class="posvenda" data-nav="light" aria-labelledby="posvenda-title">
+        <div class="container">
+          <div class="posvenda__intro">
+            <h2 class="posvenda__title" id="posvenda-title">
+              Tudo que acontece depois<br />
+              da venda, <strong>resolvido.</strong>
+            </h2>
+            <p class="posvenda__lead">
+              Gente de verdade no suporte, dinheiro liberado rápido e uma rede de compradores que já
+              chega pronta pra comprar.
+            </p>
+          </div>
+
+          <div class="bento">
+            <div class="bento__linha">
+              <!-- Suporte -->
+              <article class="bento-card bento-card--suporte">
+                <div class="bento-card__top">
+                  <p class="eyebrow">Suporte</p>
+                  <p class="status-online eyebrow">
+                    <span class="status-online__dot"><img src="assets/img/posvenda/dot-online.svg" alt="" /><span class="pulso"></span></span>
+                    Online agora
+                  </p>
+                </div>
+
+                <div class="chat" aria-label="Exemplo de conversa com o suporte">
+                  <div class="chat__linha chat__linha--eu">
+                    <div class="chat__bolha chat__bolha--eu"><p>Como antecipo minhas vendas no cartão?</p></div>
+                  </div>
+                  <div class="chat__linha">
+                    <span class="chat__avatar mono eyebrow eyebrow--sm" aria-hidden="true">LU</span>
+                    <div class="chat__bolha chat__bolha--lu"><p>Oi! Já te mostro, são 2 cliques.</p></div>
+                  </div>
+                  <div class="chat__linha chat__linha--typing">
+                    <span class="chat__gap"></span>
+                    <svg class="chat__typing" width="42.4699" height="22.5904" viewBox="0 0 42.4699 22.5904" fill="none" role="img" aria-label="Digitando"><rect width="42.4699" height="22.5904" rx="10.8434" fill="#F4F4EF"/><circle cx="13.1024" cy="11.2954" r="2.25904" fill="#0E100D"/><circle cx="21.2349" cy="11.2954" r="2.25904" fill="#0E100D"/><circle cx="29.3675" cy="11.2954" r="2.25904" fill="#0E100D"/></svg>
+                  </div>
+                  <p class="chat__meta eyebrow eyebrow--sm">Luana · respondeu em 48s</p>
+                </div>
+
+                <h3 class="bento-card__h" style="width: 397.59px; max-width: 100%">Gente de verdade. Em menos de um minuto.</h3>
+                <p class="bento-card__p" style="width: 397.59px; max-width: 100%">
+                  Suporte por chat 7 dias por semana, das 8h às 21h. Sem robô e sem automação: quem
+                  responde entende do seu negócio.
+                </p>
+
+                <div class="agenda" role="img" aria-label="Atendimento de domingo a sábado, das 8h às 21h">
+                  <img class="agenda__barras" src="assets/img/posvenda/barras-horario.svg" alt="" />
+                  <span class="agenda__dia mono eyebrow" style="left: 26.53px">D</span>
+                  <span class="agenda__dia mono eyebrow" style="left: 85.91px">S</span>
+                  <span class="agenda__dia mono eyebrow" style="left: 145.29px">T</span>
+                  <span class="agenda__dia mono eyebrow" style="left: 204.67px">Q</span>
+                  <span class="agenda__dia mono eyebrow" style="left: 264.05px">Q</span>
+                  <span class="agenda__dia mono eyebrow" style="left: 323.43px">S</span>
+                  <span class="agenda__dia mono eyebrow" style="left: 382.81px">S</span>
+                  <span class="agenda__hora mono eyebrow eyebrow--sm" style="left: 0; top: 9.64px">8h</span>
+                  <span class="agenda__hora mono eyebrow eyebrow--sm" style="left: 0; top: 55.35px">21h</span>
+                </div>
+              </article>
+
+              <!-- Saques -->
+              <article class="bento-card bento-card--saques">
+                <div class="bento-card__top">
+                  <p class="eyebrow">Saques</p>
+                  <div class="toggle" role="group" aria-label="Prazo de saque no cartão">
+                    <button class="eyebrow" type="button" data-prazo="2" aria-pressed="true">Cartão em 2 dias</button>
+                    <button class="eyebrow" type="button" data-prazo="15" aria-pressed="false">Em 15 dias</button>
+                  </div>
+                </div>
+
+                <div class="trilhas" role="img" aria-label="Linha do tempo de liberação: Pix e boleto em D+2, cartão antecipado em D+2">
+                  <img class="trilhas__svg" src="assets/img/posvenda/trilhas-liberacao.svg" alt="" />
+                  <span class="pulso" style="left: 155.693px; top: 63.253px"></span>
+                  <span class="pulso" style="left: 155.693px; top: 135.542px"></span>
+                  <span class="pulso pulso--cartao-2" style="left: 155.693px; top: 207.831px"></span>
+                  <span class="pulso pulso--cartao-15" style="left: 603.614px; top: 207.831px"></span>
+                  <span class="trilhas__label eyebrow" style="top: 56.93px">Pix</span>
+                  <span class="trilhas__label eyebrow" style="top: 129.22px">Boleto</span>
+                  <span class="trilhas__label eyebrow" style="top: 201.51px">Cartão</span>
+                  <span class="trilhas__dia mono eyebrow" style="left: 80.87px">D0</span>
+                  <span class="trilhas__dia trilhas__dia--ativo mono eyebrow" style="left: 146.63px">D+2</span>
+                  <span class="trilhas__dia mono eyebrow" style="left: 318.92px">D+7</span>
+                  <span class="trilhas__dia trilhas__dia--d15 mono eyebrow" style="left: 591.42px">D+15</span>
+                  <span class="trilhas__chip eyebrow eyebrow--sm" style="top: 53.31px">Liberado</span>
+                  <span class="trilhas__chip eyebrow eyebrow--sm" style="top: 125.6px">Liberado</span>
+                  <span class="trilhas__chip trilhas__chip--cartao eyebrow eyebrow--sm" style="top: 180.72px">Antecipado</span>
+                </div>
+
+                <div class="saques__rodape">
+                  <div class="saques__texto">
+                    <h3 class="bento-card__h">Seu dinheiro não fica parado.</h3>
+                    <p class="bento-card__p">
+                      Vendas no Pix liberadas em 2 dias. No cartão, você escolhe o ritmo: 15 ou 2 dias.
+                    </p>
+                  </div>
+                  <p class="saques__valor" aria-live="polite">
+                    <span class="saques__num">2</span>
+                    <span class="saques__un">dias</span>
+                  </p>
+                </div>
+              </article>
+            </div>
+
+            <!-- 1 clique -->
+            <article class="um-clique">
+              <div class="um-clique__card">
+                <div class="um-clique__texto">
+                  <h3 class="um-clique__h">Compradores do mundo todo, a um clique da sua oferta.</h3>
+                  <p class="um-clique__p">
+                    Quem já comprou na Kiwify salva o cartão e passa a comprar com um clique em
+                    qualquer checkout da rede, de onde estiver.
+                  </p>
+                  <div class="um-clique__stat">
+                    <p class="um-clique__valor">
+                      <span class="um-clique__ate">até</span>
+                      <span class="um-clique__pct">25%</span>
+                    </p>
+                    <p class="eyebrow eyebrow--sm">do volume de vendas<br />vem do 1 clique</p>
+                  </div>
+                </div>
+              </div>
+              <img class="um-clique__moedas" src="assets/img/posvenda/moedas-cripto.png" alt="" loading="lazy" />
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 6: Fora da tela, a Kiwify também reúne -->
+      <section class="eventos" data-nav="dark" aria-labelledby="eventos-title">
+        <img class="eventos__kiwi" src="assets/img/eventos/kiwi-fundo.svg" alt="" />
+        <h2 class="eventos__title" id="eventos-title">
+          Fora da tela, a Kiwify<br />
+          <strong>também reúne.</strong>
+        </h2>
+        <p class="eventos__numero" aria-label="Mais de 3.000 criadores">
+          <span aria-hidden="true">+3.000</span>
+        </p>
+        <p class="eventos__desc">
+          Eventos exclusivos pra quem constrói com a gente. O 2º Kiwify Festival, em 2024, juntou
+          mais de 3.000 criadores de conteúdo no mesmo lugar.
+        </p>
+        <img class="eventos__multidao" src="assets/img/eventos/multidao.svg" alt="" />
+      </section>
+
+      <!-- Seção 7: Comece em 2 minutos (trilho horizontal) -->
+      <section class="recursos" data-nav="light" aria-labelledby="recursos-title">
+        <div class="recursos__stage">
+          <div class="container">
+            <div class="recursos__head">
+              <h2 class="recursos__title" id="recursos-title">
+                Comece em 2 minutos.<br />
+                <strong>Cresça sem trocar de plataforma.</strong>
+              </h2>
+              <p class="recursos__hint" aria-hidden="true">Role para explorar →</p>
+            </div>
+
+            <div class="recursos__viewport">
+              <ul class="recursos__trilho">
+                <li class="recurso recurso--feature">
+                  <img class="recurso__icon" src="assets/icons/recursos/cartao-pix-2-dias.svg" alt="" />
+                  <p class="recurso__label">Cartão e Pix em 2 dias</p>
+                </li>
+                <li class="recurso recurso--feature">
+                  <img class="recurso__icon" src="assets/icons/recursos/entrega-imediata.svg" alt="" />
+                  <p class="recurso__label">Entrega imediata do produto</p>
+                </li>
+                <li class="recurso recurso--feature">
+                  <img class="recurso__icon" src="assets/icons/recursos/checkout-sob-medida.svg" alt="" />
+                  <p class="recurso__label">Checkout sob medida</p>
+                </li>
+                <li class="recurso recurso--feature">
+                  <img class="recurso__icon" src="assets/icons/recursos/coproducao.svg" alt="" />
+                  <p class="recurso__label">Coprodução</p>
+                </li>
+                <li class="recurso recurso--feature">
+                  <img class="recurso__icon" src="assets/icons/recursos/marketplace-afiliados.svg" alt="" />
+                  <p class="recurso__label">Marketplace de afiliados</p>
+                </li>
+                <li class="recurso recurso--feature">
+                  <img class="recurso__icon" src="assets/icons/recursos/area-de-membros.svg" alt="" />
+                  <p class="recurso__label">Área de membros personalizável</p>
+                </li>
+                <li class="recurso recurso--feature">
+                  <img class="recurso__icon" src="assets/icons/recursos/app-alunos.svg" alt="" />
+                  <p class="recurso__label">App para seus alunos</p>
+                </li>
+                <li class="recurso recurso--cta">
+                  <p class="recurso__eyebrow">E muito mais</p>
+                  <div class="recurso__cta">
+                    <p class="recurso__label">Tudo pronto em 2 minutos.</p>
+                    <a class="btn btn--light" href="#">Começar a vender <svg class="btn__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 13L13 1M13 10V1H4" stroke="currentColor"/></svg></a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="recursos__progress" aria-hidden="true"><span></span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 8: Quem construiu aqui, conta -->
+      <section class="depoimentos" data-nav="light" aria-labelledby="depoimentos-title">
+        <div class="container">
+          <div class="depoimentos__head">
+            <h2 class="depoimentos__title" id="depoimentos-title">
+              Quem construiu aqui, <strong>conta.</strong>
+            </h2>
+            <p class="depoimentos__lead">
+              Histórias reais de criadores que fizeram da Kiwify a base do negócio.
+            </p>
+          </div>
+
+          <div class="depoimentos__grid">
+            <article class="depo depo--jessica" data-video="">
+              <div class="depo__media depo__media--a">
+                <img class="depo__img" src="assets/img/depoimentos/jessica.jpg" alt="Jéssica gravando depoimento em casa" loading="lazy" />
+              </div>
+              <div class="depo__sombra"></div>
+              <button class="depo__play" type="button" aria-label="Assistir depoimento de Jéssica">
+                <img src="assets/icons/play.svg" alt="" />
+              </button>
+              <div class="depo__info">
+                <p class="depo__nome">Jéssica</p>
+                <p class="depo__papel">Produtor</p>
+              </div>
+            </article>
+
+            <article class="depo depo--victor" data-video="">
+              <div class="depo__media depo__media--b">
+                <img class="depo__img" src="assets/img/depoimentos/victor-barbosa.jpg" alt="Victor Barbosa segurando placa de 100 mil" loading="lazy" />
+              </div>
+              <div class="depo__sombra" style="border-radius: 18px"></div>
+              <button class="depo__play" type="button" aria-label="Assistir depoimento de Victor Barbosa">
+                <img src="assets/icons/play.svg" alt="" />
+              </button>
+              <div class="depo__info" style="left: 25.11px; bottom: 21.31px">
+                <p class="depo__nome">Victor Barbosa</p>
+                <p class="depo__papel">Produtor</p>
+              </div>
+            </article>
+
+            <article class="depo depo--joao" data-video="">
+              <div class="depo__media depo__media--a">
+                <img class="depo__img" src="assets/img/depoimentos/joao-pedro.jpg" alt="João Pedro gravando depoimento na varanda" loading="lazy" />
+              </div>
+              <div class="depo__sombra"></div>
+              <button class="depo__play" type="button" aria-label="Assistir depoimento de João Pedro">
+                <img src="assets/icons/play.svg" alt="" />
+              </button>
+              <div class="depo__info" style="left: 24.22px">
+                <p class="depo__nome">João Pedro</p>
+                <p class="depo__papel">Produtor</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Seção 9: Perguntas Frequentes -->
+      <!-- ATENÇÃO: respostas são RASCUNHO baseado no conteúdo da página — revisar antes de publicar -->
+      <section class="faq" data-nav="light" id="duvidas" aria-labelledby="faq-title">
+        <div class="container faq__row">
+          <h2 class="faq__title" id="faq-title">Perguntas<br />Frequentes</h2>
+          <div class="faq__lista">
+            <div class="faq__item">
+              <button class="faq__pergunta" type="button" aria-expanded="false" aria-controls="faq-r1" id="faq-q1">
+                Quando recebo meu dinheiro?
+                <img class="faq__icon" src="assets/icons/plus.svg" alt="" />
+              </button>
+              <div class="faq__resposta" id="faq-r1" role="region" aria-labelledby="faq-q1">
+                <div><p>Vendas no Pix são liberadas em 2 dias. No cartão, você escolhe o ritmo: em 15 dias ou antecipado em 2 dias.</p></div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__pergunta" type="button" aria-expanded="false" aria-controls="faq-r2" id="faq-q2">
+                Tem área de membros?
+                <img class="faq__icon" src="assets/icons/plus.svg" alt="" />
+              </button>
+              <div class="faq__resposta" id="faq-r2" role="region" aria-labelledby="faq-q2">
+                <div><p>Tem. Uma área de membros com cara de streaming, personalizável, e a hospedagem dos vídeos é por nossa conta.</p></div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__pergunta" type="button" aria-expanded="false" aria-controls="faq-r3" id="faq-q3">
+                Posso ter coprodutores?
+                <img class="faq__icon" src="assets/icons/plus.svg" alt="" />
+              </button>
+              <div class="faq__resposta" id="faq-r3" role="region" aria-labelledby="faq-q3">
+                <div><p>Pode. A coprodução é nativa: você cadastra os coprodutores e a divisão das vendas acontece automaticamente.</p></div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__pergunta" type="button" aria-expanded="false" aria-controls="faq-r4" id="faq-q4">
+                Tem upsell de 1 clique?
+                <img class="faq__icon" src="assets/icons/plus.svg" alt="" />
+              </button>
+              <div class="faq__resposta" id="faq-r4" role="region" aria-labelledby="faq-q4">
+                <div><p>Tem. Quem já comprou na Kiwify compra com um clique, e você pode oferecer produtos extras logo após a compra.</p></div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__pergunta" type="button" aria-expanded="false" aria-controls="faq-r5" id="faq-q5">
+                Dá pra vender assinatura?
+                <img class="faq__icon" src="assets/icons/plus.svg" alt="" />
+              </button>
+              <div class="faq__resposta" id="faq-r5" role="region" aria-labelledby="faq-q5">
+                <div><p>Dá. Você pode cobrar de forma recorrente e acompanhar as assinaturas pelo painel.</p></div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__pergunta" type="button" aria-expanded="false" aria-controls="faq-r6" id="faq-q6">
+                Posso vender serviços, como mentoria?
+                <img class="faq__icon" src="assets/icons/plus.svg" alt="" />
+              </button>
+              <div class="faq__resposta" id="faq-r6" role="region" aria-labelledby="faq-q6">
+                <div><p>Pode. Mentorias, consultorias e outros serviços podem ser vendidos com o mesmo checkout.</p></div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__pergunta" type="button" aria-expanded="false" aria-controls="faq-r7" id="faq-q7">
+                E produtos físicos?
+                <img class="faq__icon" src="assets/icons/plus.svg" alt="" />
+              </button>
+              <div class="faq__resposta" id="faq-r7" role="region" aria-labelledby="faq-q7">
+                <div><p>Consulte a Central de Ajuda para ver como vender produtos físicos na Kiwify.</p></div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__pergunta" type="button" aria-expanded="false" aria-controls="faq-r8" id="faq-q8">
+                Posso trabalhar com afiliados?
+                <img class="faq__icon" src="assets/icons/plus.svg" alt="" />
+              </button>
+              <div class="faq__resposta" id="faq-r8" role="region" aria-labelledby="faq-q8">
+                <div><p>Pode. Seu produto entra no marketplace de afiliados e você define a comissão de cada um.</p></div>
+              </div>
+            </div>
+            <div class="faq__item">
+              <button class="faq__pergunta" type="button" aria-expanded="false" aria-controls="faq-r9" id="faq-q9">
+                Sou comprador e preciso de ajuda.
+                <img class="faq__icon" src="assets/icons/plus.svg" alt="" />
+              </button>
+              <div class="faq__resposta" id="faq-r9" role="region" aria-labelledby="faq-q9">
+                <div><p>Fale com o suporte pelo chat, 7 dias por semana, das 8h às 21h. Gente de verdade responde em menos de um minuto.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transição 2 com scroll: branco → logo verde cresce → verde (js/transicao.js) -->
+      <div class="transicao transicao--branca" data-nav-from="light" data-nav-stage="light" data-nav-end="dark" aria-hidden="true">
+        <div class="transicao__stage">
+          <div class="transicao__bg"></div>
+          <img class="transicao__logo" src="assets/img/kiwi-transicao-verde.svg" alt="" />
+          <div class="transicao__fade"></div>
+        </div>
+      </div>
+
+      <!-- Seção 10: Taxas — Você só paga se vender -->
+      <section class="taxas" data-nav="dark" id="taxas" aria-labelledby="taxas-title">
+        <div class="container">
+          <h2 class="taxas__title" id="taxas-title">Você só paga <strong>se vender.</strong></h2>
+          <p class="taxas__preco" aria-label="8,99% mais R$ 2,49 por venda">
+            <span class="taxas__pct" aria-hidden="true">8,99%</span>
+            <span class="taxas__fixo" aria-hidden="true">+ R$2,49</span>
+          </p>
+          <p class="taxas__desc">
+            Nada antes da primeira venda. Pix e boleto em 2 dias, cartão em 15 dias, ou em 2 se
+            preferir.
+          </p>
+          <ul class="taxas__chips">
+            <li class="taxas__chip">Pix · 2 dias</li>
+            <li class="taxas__chip">Boleto · 2 dias</li>
+            <li class="taxas__chip">Cartão · 15 ou 2 dias</li>
+          </ul>
+          <a class="btn btn--light" href="#">
+            Começar a vender
+            <svg class="btn__arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M1 13L13 1M13 10V1H4" stroke="currentColor"/></svg>
+          </a>
+        </div>
+      </section>
+
+      <!-- Seção 11: Sua operação no bolso -->
+      <section class="app" data-nav="light" aria-labelledby="app-title">
+        <img class="app__celular" src="assets/img/app/celular-receita.jpg" alt="App da Kiwify no celular mostrando receita de R$ 349.716,35 nos últimos 7 dias" loading="lazy" />
+        <div class="container">
+          <div class="app__texto">
+            <h2 class="app__title" id="app-title">Sua operação<br /><strong>no bolso.</strong></h2>
+
+            <div class="app__lojas">
+              <a class="app__loja app__loja--google" href="#" aria-label="Disponível no Google Play">
+                <img src="assets/img/app/google-play.png" alt="" />
+              </a>
+              <a class="app__loja app__loja--apple" href="#" aria-label="Disponível na App Store">
+                <img src="assets/img/app/app-store.png" alt="" />
+              </a>
+            </div>
+
+            <ul class="app__notifs" aria-label="Exemplos de notificações de venda">
+              <li class="notif">
+                <span class="notif__icone"><img src="assets/img/app/kiwi-notificacao.svg" alt="" /></span>
+                <span class="notif__titulo">Venda aprovada!</span>
+                <span class="notif__tempo">há 2m</span>
+                <span class="notif__texto">Sua comissão R$1762,23</span>
+              </li>
+              <li class="notif">
+                <span class="notif__icone"><img src="assets/img/app/kiwi-notificacao.svg" alt="" /></span>
+                <span class="notif__titulo">Venda aprovada!</span>
+                <span class="notif__tempo">há 2m</span>
+                <span class="notif__texto">Sua comissão R$1762,23</span>
+              </li>
+              <li class="notif">
+                <span class="notif__icone"><img src="assets/img/app/kiwi-notificacao.svg" alt="" /></span>
+                <span class="notif__titulo">Venda aprovada!</span>
+                <span class="notif__tempo">há 2m</span>
+                <span class="notif__texto">Sua comissão R$1762,23</span>
+              </li>
+              <li class="notif">
+                <span class="notif__icone"><img src="assets/img/app/kiwi-notificacao.svg" alt="" /></span>
+                <span class="notif__titulo">Venda aprovada!</span>
+                <span class="notif__tempo">há 2m</span>
+                <span class="notif__texto">Sua comissão R$1762,23</span>
+              </li>
+              <li class="notif">
+                <span class="notif__icone"><img src="assets/img/app/kiwi-notificacao.svg" alt="" /></span>
+                <span class="notif__titulo">Venda aprovada!</span>
+                <span class="notif__tempo">há 2m</span>
+                <span class="notif__texto">Sua comissão R$1762,23</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape" data-nav="dark">
+      <div class="container">
+        <div class="rodape__colunas">
+          <div class="rodape__marca">
+            <img src="assets/img/kiwify-logo-rodape.svg" alt="Kiwify" width="131" height="34.413" />
+            <p class="rodape__slogan">A estrutura de quem vive de conhecimento.</p>
+          </div>
+
+          <nav class="rodape__col" aria-labelledby="rodape-plataforma">
+            <h3 id="rodape-plataforma">Plataforma</h3>
+            <ul>
+              <li><a href="#taxas">Taxas</a></li>
+              <li><a href="#">Aprenda a vender</a></li>
+              <li><a href="#">Sobre</a></li>
+            </ul>
+          </nav>
+
+          <nav class="rodape__col" aria-labelledby="rodape-suporte">
+            <h3 id="rodape-suporte">Suporte</h3>
+            <ul>
+              <li><a href="#">Central de ajuda</a></li>
+              <li><a href="#duvidas">Dúvidas</a></li>
+              <li><a href="#">Contato</a></li>
+            </ul>
+          </nav>
+
+          <nav class="rodape__col" aria-labelledby="rodape-legal">
+            <h3 id="rodape-legal">Legal</h3>
+            <ul>
+              <li><a href="#">Termos de uso</a></li>
+              <li><a href="#">Termos KiwiPay</a></li>
+              <li><a href="#">Licença de software</a></li>
+              <li><a href="#">Política de conteúdo</a></li>
+              <li><a href="#">Privacidade</a></li>
+              <li><a href="#">Privacidade — agentes de IA</a></li>
+            </ul>
+          </nav>
+
+          <nav class="rodape__col" aria-labelledby="rodape-redes">
+            <h3 id="rodape-redes">Redes</h3>
+            <ul>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">YouTube</a></li>
+              <li><a href="#">TikTok</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="rodape__base">
+          <p class="rodape__copy">© 2026 Kiwify Tecnologia e Serviços Ltda.</p>
+          <p class="rodape__credito">Redesign conceitual — não oficial · Matheus Toledo</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="js/smooth-scroll.js" defer></script>
+    <script src="js/hero.js" defer></script>
+    <script src="js/nav.js" defer></script>
+    <script src="js/aprovacao.js" defer></script>
+    <script src="js/premios.js" defer></script>
+    <script src="js/transicao.js" defer></script>
+    <script src="js/posvenda.js" defer></script>
+    <script src="js/moedas.js" defer></script>
+    <script src="js/eventos.js" defer></script>
+    <script src="js/recursos.js" defer></script>
+    <script src="js/depoimentos.js" defer></script>
+    <script src="js/faq.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
