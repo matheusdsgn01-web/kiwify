@@ -1,7 +1,8 @@
 /* ---------- Seção: Hero (Figma 1:1277) ---------- */
 .hero {
   position: relative;
-  min-height: 881px;
+  /* ocupa a tela inteira em monitores altos (ex.: 1920×1080), nunca menos que o design */
+  min-height: max(881px, 100vh);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -14,9 +15,12 @@
    "cover" ancorada embaixo; com 881px de
    altura ela fica com 1558px de largura. O vídeo (1280×720) foi medido para que o
    bloco 3D caia exatamente onde está na imagem: no hero de 1440×881 ele mede
-   1166×656, começa em x=274 e sobra 214px embaixo. Para valer em qualquer tela, as
-   medidas seguem a mesma regra de escala da imagem:  s = max(altura/881, largura/1558)
-   → 1px do layout de referência = max(100cqh/881, 100cqw/1558).
+   1166×656, começa em x=274 e sobra 214px embaixo.
+   Em outras telas o vídeo escala SÓ pela altura do hero (s = altura/881, até 1,25×),
+   ancorado embaixo e centralizado — o bloco mantém a relação com o texto (que também
+   fica ancorado embaixo). Escalar pela largura (como a imagem fazia) jogava o bloco
+   para cima e cortava o topo em telas largas (1920×1080). As laterais que sobram se
+   dissolvem no fundo escuro. 1px do layout de referência = 100cqh/881 (máx. 1,25px).
 */
 .hero__media {
   position: absolute;
@@ -30,10 +34,10 @@
 
 .hero__video {
   position: absolute;
-  left: calc(50% - max(50.64cqh, 28.63cqw));
+  left: calc(50% - min(50.64cqh, 557.6px));
   /* 214px no layout de referência: alinha a base do bloco com a da imagem (y≈504) */
-  bottom: max(24.34cqh, 13.76cqw);
-  width: max(132.34cqh, 74.83cqw);
+  bottom: min(24.34cqh, 268.1px);
+  width: min(132.34cqh, 1457.5px);
   height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
@@ -42,11 +46,11 @@
   transition: opacity 0.8s ease;
   /* Bordas esfumadas para o vídeo "continuar" no fundo escuro (estende a cena) */
   -webkit-mask-image:
-    linear-gradient(to right, transparent 0%, #000 22%, #000 97%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 22%, #000 86%, transparent 100%),
     linear-gradient(to bottom, transparent 0%, #000 7%, #000 70%, transparent 100%);
   -webkit-mask-composite: source-in;
   mask-image:
-    linear-gradient(to right, transparent 0%, #000 22%, #000 97%, transparent 100%),
+    linear-gradient(to right, transparent 0%, #000 22%, #000 86%, transparent 100%),
     linear-gradient(to bottom, transparent 0%, #000 7%, #000 70%, transparent 100%);
   mask-composite: intersect;
 }

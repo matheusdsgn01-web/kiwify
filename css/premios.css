@@ -248,8 +248,19 @@
     align-items: stretch;
   }
 
+  /* respiro menor depois que Dubai cobre o 5M (o gap da coluna aqui é 32px) */
+  .premios {
+    --pilha-respiro: 64px;
+    padding-bottom: 48px;
+  }
+
+  .premios__cards::after {
+    margin-top: -32px;
+  }
+
   .premios__texto {
     position: static; /* em coluna o texto rola normalmente; só os cards empilham */
+    min-height: 0; /* os 751px só servem para o texto acompanhar os cards no desktop */
     padding-top: 0;
     margin-left: 0;
   }
@@ -279,7 +290,7 @@
 
 @media (max-width: 560px) {
   .premios {
-    padding-block: 72px;
+    padding-block: 72px 40px;
   }
 
   .premio__midia {
